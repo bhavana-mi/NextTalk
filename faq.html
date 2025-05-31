@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wistriva - FAQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    body.subpage header nav a.active {
+      color: #0052cc;
+      font-weight: bold;
+    }
+    .faq-item {
+      margin-bottom: 1.5em;
+    }
+    .faq-question {
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 0.3em;
+      color: #003d99;
+    }
+    .faq-answer {
+      display: none;
+      margin-left: 1em;
+      color: #333;
+    }
+  </style>
+</head>
+<body class="subpage">
+  <header>
+    <h1>Wistriva</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="mentors.html">Mentors</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="faq.html" class="active">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section data-aos="fade-up">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">What is Wistriva?</div>
+        <div class="faq-answer">Wistriva is a mentorship platform connecting professionals across industries to share knowledge, support career transitions, and build networks.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I find a mentor?</div>
+        <div class="faq-answer">You can browse mentors on the Mentors page and connect directly for personalized guidance based on your goals and career path.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is there a fee to use Wistriva?</div>
+        <div class="faq-answer">Basic networking and community features are free. Advanced 1:1 mentorship sessions may require a nominal fee depending on the mentor's terms.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I become a mentor?</div>
+        <div class="faq-answer">Visit the Mentors page and apply to join our mentor community. We review all applications to ensure quality guidance.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How is my privacy protected?</div>
+        <div class="faq-answer">We take privacy seriously. Please review our Privacy Policy for details on data protection and your rights.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Wistriva. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a> | <a href="faq.html">FAQ</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // FAQ toggle logic
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        if (answer.style.display === 'block') {
+          answer.style.display = 'none';
+        } else {
+          answer.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
