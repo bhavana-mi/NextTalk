@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Striva - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
@@ -10,20 +11,26 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f8fbfc;
+      background: linear-gradient(to bottom right, #f8fbfc, #e6f7f7);
       color: #333;
+      overflow-x: hidden;
     }
 
     header {
       background-color: #e0f7f7;
       padding: 20px 40px;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
       margin: 0;
       font-size: 2em;
       color: #064547;
+      animation: slideDown 1s ease-out;
     }
 
     nav {
@@ -35,12 +42,13 @@
       color: #333;
       padding: 8px 16px;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
       margin: 0 5px;
     }
 
     nav a:hover {
       background-color: #cce7f0;
+      transform: scale(1.05);
     }
 
     nav a.home {
@@ -54,17 +62,17 @@
     }
 
     .hero {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 40px 20px;
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 50px 30px;
       text-align: center;
       background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 
     .hero h2 {
-      font-size: 1.8em;
+      font-size: 2em;
       margin-bottom: 15px;
       color: #064547;
     }
@@ -79,26 +87,43 @@
       background-color: #b2d8d8;
       color: #064547;
       border: none;
-      padding: 12px 28px;
+      padding: 14px 32px;
       font-size: 1.1em;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     button:hover {
       background-color: #8acccc;
-      transform: scale(1.05);
+      transform: scale(1.07);
     }
 
     footer {
       text-align: center;
       font-size: 0.9em;
-      color: #777;
+      color: #555;
       padding: 20px;
       background: #f0f7f7;
-      margin-top: 60px;
+      margin-top: 80px;
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Soft fade-in on load */
+    [data-aos] {
+      opacity: 0;
+      transition-property: transform, opacity;
     }
   </style>
 </head>
@@ -114,17 +139,22 @@
   </header>
 
   <main>
-    <section class="hero" data-aos="fade-up">
-      <h2 data-aos="fade-left">Welcome to Striva</h2>
-      <p data-aos="fade-right">Connect with professionals who’ve made bold career moves — learn, ask, and grow!</p>
-      <button onclick="window.location.href='services.html'" data-aos="zoom-in">Find a Mentor</button>
+    <section class="hero" data-aos="zoom-in-up">
+      <h2 data-aos="fade-up">Welcome to Striva</h2>
+      <p data-aos="fade-up" data-aos-delay="100">
+        Connect with professionals who’ve made bold career moves — learn, ask, and grow!
+      </p>
+      <button onclick="window.location.href='services.html'" data-aos="fade-up" data-aos-delay="200">
+        Find a Mentor
+      </button>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Striva</p>
+  <footer data-aos="fade-in">
+    <p>&copy; 2025 Striva • Empowering Career Journeys</p>
   </footer>
 
+  <!-- AOS Animation -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
