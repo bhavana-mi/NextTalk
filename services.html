@@ -3,31 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <title>Services - Striva</title>
-  <link rel="stylesheet" href="css/style.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f8fbfc, #e6f7f7);
+      color: #444;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #e0f7f7;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: #064547;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    nav {
+      margin-top: 10px;
+    }
     nav a {
       text-decoration: none;
       color: #333;
       padding: 8px 16px;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin: 0 5px;
+      display: inline-block;
+      position: relative;
+      font-weight: 600;
+      cursor: pointer;
     }
     nav a:hover {
       background-color: #cce7f0;
+      transform: scale(1.05);
     }
-    nav a.home {
-      background-color: #b2d8d8;
-      color: #064547;
-      font-weight: bold;
+    /* Active page link style */
+    nav a.active {
+      background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
+      background-size: 400% 400%;
+      background-repeat: no-repeat;
+      color: #064547 !important;
+      animation: gradientShift 12s ease infinite;
+      box-shadow: 0 0 10px #64bfbf, 0 0 20px #8acccc;
+      transform: scale(1.1);
+      font-weight: 700;
+      cursor: default;
     }
-    nav a.home:hover {
-      background-color: #8acccc;
+    nav a.active:hover {
+      transform: scale(1.1);
+      background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
     }
     main {
       max-width: 800px;
       margin: 30px auto;
-      font-family: Arial, sans-serif;
       color: #444;
+      padding: 0 20px;
     }
     ul {
       list-style: none;
@@ -66,16 +104,36 @@
     button:hover {
       background-color: #8acccc;
     }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #b2d8d8, 0 0 10px #8acccc;
+      }
+      100% {
+        text-shadow: 0 0 15px #a1d9d9, 0 0 25px #064547;
+      }
+    }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Our Services</h1>
     <nav>
-      <a href="index.html" class="home">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="services.html" id="nav-services">Services</a>
+      <a href="contact.html" id="nav-contact">Contact</a>
     </nav>
   </header>
   <main>
@@ -100,5 +158,24 @@
   <footer>
     <p>&copy; 2025 Striva</p>
   </footer>
+
+  <script>
+    // Detect current page from URL path and highlight active nav link
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll("nav a");
+    let matched = false;
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+        matched = true;
+      } else {
+        link.classList.remove("active");
+      }
+    });
+    // If no link matches, highlight Home by default
+    if (!matched) {
+      document.getElementById("nav-home").classList.add("active");
+    }
+  </script>
 </body>
 </html>
