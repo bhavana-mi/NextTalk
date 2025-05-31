@@ -241,6 +241,15 @@ footer {
 
 /* Animations */
 /* Gradient text animation for header */
+
+body.subpage header h1,
+header h1 {
+  color: #56b4bf; /* pastel teal */
+  font-weight: 700;
+  /* No animation or glow */
+  text-shadow: 1px 1px 3px rgba(0, 120, 180, 0.4); /* subtle shadow for depth */
+}
+/*
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -260,4 +269,4 @@ header h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientShift 6s ease infinite;
-}
+}*/
