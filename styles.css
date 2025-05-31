@@ -240,25 +240,24 @@ footer {
 }
 
 /* Animations */
-@keyframes glow {
+/* Gradient text animation for header */
+@keyframes gradientShift {
   0% {
-    text-shadow: 0 0 5px #56b4bf, 0 0 15px #00c8ff;
+    background-position: 0% 50%;
   }
   50% {
-    text-shadow: 0 0 10px #56b4bf, 0 0 25px #00c8ff;
+    background-position: 100% 50%;
   }
   100% {
-    text-shadow: 0 0 5px #56b4bf, 0 0 15px #00c8ff;
+    background-position: 0% 50%;
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body.subpage header h1,
+header h1 {
+  background: linear-gradient(270deg, #56b4bf, #00c8ff, #56b4bf, #0077aa);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
 }
