@@ -11,7 +11,6 @@
       color: #444;
       overflow-x: hidden;
     }
-
     header {
       background-color: #e0f7f7;
       padding: 20px 40px;
@@ -21,14 +20,12 @@
       top: 0;
       z-index: 1000;
     }
-
     header h1 {
       margin: 0;
       font-size: 2.2em;
       color: #064547;
       animation: glow 3s ease-in-out infinite alternate;
     }
-
     header h2.tagline {
       font-weight: 400;
       color: #3a7ca5;
@@ -37,47 +34,31 @@
       margin-bottom: 20px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
     nav {
       margin-top: 10px;
     }
-
     nav a {
+      color: #064547; /* pastel teal */
       text-decoration: none;
-      color: #333;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      padding: 6px 12px;
+      border-radius: 6px;
       margin: 0 5px;
       display: inline-block;
-      position: relative;
-      font-weight: 600;
-      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
     }
-
     nav a:hover {
-      background-color: #cce7f0; /* light pastel blue on hover */
+      background-color: #cce7f0;
+      color: #064547;
       transform: scale(1.05);
     }
-
-    /* Active page link style */
     nav a.active {
-      background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
-      background-size: 400% 400%;
-      background-repeat: no-repeat;
-      color: #064547 !important;
-      animation: gradientShift 12s ease infinite;
-      box-shadow: 0 0 10px #64bfbf, 0 0 20px #8acccc;
-      transform: scale(1.1);
+      background-color: #b2d8d8;
+      color: #064547;
       font-weight: 700;
+      transform: scale(1.1);
       cursor: default;
     }
-
-    nav a.active:hover {
-      transform: scale(1.1);
-      background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
-    }
-
     main {
       max-width: 700px;
       margin: 40px auto 60px;
@@ -86,7 +67,6 @@
       color: #444;
       padding: 0 20px;
     }
-
     footer {
       text-align: center;
       font-size: 0.9em;
@@ -95,25 +75,12 @@
       background: #f0f7f7;
       margin-top: 80px;
     }
-
     @keyframes glow {
       0% {
         text-shadow: 0 0 5px #b2d8d8, 0 0 10px #8acccc;
       }
       100% {
         text-shadow: 0 0 15px #a1d9d9, 0 0 25px #064547;
-      }
-    }
-
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
       }
     }
   </style>
@@ -123,46 +90,19 @@
     <h1>About Striva</h1>
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
-      <a href="index.html" id="nav-home">Home</a>
-      <a href="about.html" id="nav-about">About</a>
-      <a href="services.html" id="nav-services">Services</a>
-      <a href="contact.html" id="nav-contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
   <main>
     <p>Striva is a platform dedicated to empowering professionals to strive boldly in their careers. We connect you with mentors who have made courageous transitions across industries — from tech to finance, software to semiconductors, and beyond.</p>
-    
     <p>At Striva, we believe that ambition and persistence lead to meaningful growth. Our community encourages learning, asking questions, and making bold moves that push your career forward.</p>
-
     <p>Join Striva to explore new opportunities, gain valuable insights, and build connections with those who have paved the way before you. Together, we strive to achieve more.</p>
   </main>
   <footer>
     <p>&copy; 2025 Striva</p>
   </footer>
-
-  <script>
-    // Get current page filename
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    
-    // Select all nav links
-    const navLinks = document.querySelectorAll("nav a");
-
-    // Flag to check if any link matched current page
-    let matched = false;
-
-    navLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-        matched = true;
-      } else {
-        link.classList.remove("active");
-      }
-    });
-
-    // If none matched, highlight home
-    if (!matched) {
-      document.getElementById("nav-home").classList.add("active");
-    }
-  </script>
 </body>
 </html>
