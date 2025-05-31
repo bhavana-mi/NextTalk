@@ -2,79 +2,194 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Striva - Services</title>
+  <title>Wistriva - Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
+    body.subpage {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #122642, #203e5a);
+      color: #E0F7F7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #f9f9f9;
+    }
+    header h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #56B4BF;
+    }
+    header h2.tagline {
+      margin: 5px 0 15px 0;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #d1d5db;
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover {
+      color: #8ecae6;
+      background-color: rgba(255,255,255,0.1);
+    }
+    nav a.active {
+      background-color: #56B4BF;
+      color: #FFFFFF;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
     main {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      font-family: Arial, sans-serif;
+      margin: 50px auto;
+      padding: 30px 40px;
+      background: #1B3B50;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
     }
-    section.service {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+
+    main h2 {
+      font-family: Georgia, serif;
+      color: #82C9A6;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .service {
+      background: #2B5060;
+      border-radius: 10px;
       padding: 20px 25px;
       margin-bottom: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
     }
-    section.service h2 {
-      color: #007BFF;
-      margin-bottom: 10px;
+
+    .service:hover {
+      transform: scale(1.02);
     }
-    section.service p {
-      color: #333;
-      font-size: 1rem;
-      line-height: 1.5;
+
+    .service h3 {
+      color: #8ecae6;
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+
+    .service p {
+      color: #f0f0f0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #d1d5db;
+      border-top: 1px solid #305770;
+    }
+    footer a {
+      color: #8ecae6;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+      }
+      nav a {
+        margin-right: 12px;
+      }
     }
   </style>
 </head>
 <body class="subpage">
   <header>
-    <h1>Our Services</h1>
+    <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html" class="active">Services</a>
+      <a href="mentors.html">Mentors</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="faq.html">FAQ</a>
     </nav>
   </header>
 
   <main>
+    <h2>Our Services</h2>
+
     <section class="service" data-aos="fade-up">
-      <h2>Mentor-Mentee Networking</h2>
+      <h3>Mentor-Mentee Networking</h3>
       <p>Connect with professionals and peers to share experiences, advice, and support your career growth.</p>
     </section>
 
     <section class="service" data-aos="fade-up" data-aos-delay="100">
-      <h2>Group Discussions & Community Forums</h2>
+      <h3>Group Discussions & Community Forums</h3>
       <p>Participate in topic-based discussions and peer groups to learn collectively.</p>
     </section>
 
     <section class="service" data-aos="fade-up" data-aos-delay="200">
-      <h2>Advanced Paid Mentorship</h2>
+      <h3>Advanced Paid Mentorship</h3>
       <p>Access premium mentorship services with verified experts for personalized guidance.</p>
     </section>
 
     <section class="service" data-aos="fade-up" data-aos-delay="300">
-      <h2>Skill Development Resources</h2>
+      <h3>Skill Development Resources</h3>
       <p>Get access to curated materials, webinars, and workshops tailored to your goals.</p>
     </section>
 
     <section class="service" data-aos="fade-up" data-aos-delay="400">
-      <h2>Career Transition Support</h2>
+      <h3>Career Transition Support</h3>
       <p>Specialized help for career shifts including resume reviews and interview preparation.</p>
     </section>
 
     <section class="service" data-aos="fade-up" data-aos-delay="500">
-      <h2>Booking & Scheduling</h2>
+      <h3>Booking & Scheduling</h3>
       <p>Easily book sessions with mentors or join group events directly on the platform.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Striva. All rights reserved.</p>
+    &copy; 2025 Wistriva. All rights reserved. |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="faq.html">FAQ</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
