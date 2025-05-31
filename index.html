@@ -32,29 +32,29 @@
     }
 
     nav a {
-      color: #ddd;
-      text-decoration: none;
-      margin-right: 20px;
-      font-weight: 500;
-      transition: color 0.3s, transform 0.3s;
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
-    nav a:hover {
-      color: #00c8ff;
-      transform: scale(1.05);
-    }
-
-    /* Active link styling */
-    nav a.active {
-      color: #00c8ff;
-      font-weight: 700;
-      background-color: rgba(0, 200, 255, 0.15);
-      transform: scale(1.1);
-      cursor: default;
-    }
+    color: #064547; /* pastel teal text */
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  
+  nav a:hover {
+    background-color: #cce7f0; /* light pastel blue/green */
+    color: #064547;
+    transform: scale(1.05);
+  }
+  
+  nav a.active {
+    background-color: #b2d8d8; /* pastel teal background */
+    color: #064547; /* darker pastel teal */
+    font-weight: 700;
+    transform: scale(1.1);
+    cursor: default;
+  }
 
     main {
       max-width: 1000px;
