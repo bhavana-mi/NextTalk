@@ -1,133 +1,258 @@
-/* ===== Reset & Base ===== */
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #e0f7f7;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wistriva - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    /* Tagline style */
+    .tagline {
+      font-style: italic;
+      font-family: 'Georgia', serif;
+      color: #cccccc;
+    }
 
-/* ===== Header & Navigation ===== */
-header {
-  padding: 20px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #0f1b2a; /* Deep navy */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  color: #82c9a6; /* Palette green */
-}
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #56b4bf;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #00c8ff;
+      color: #000;
+      transform: scale(1.05);
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
-  font-weight: 700;
-  color: #82c9a6;
-}
+    /* Feature images */
+    .feature img {
+      width: 100%;
+      max-height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
 
-nav {
-  margin-top: 10px;
-}
+    /* Container for features */
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      z-index: 1; /* above noise overlay */
+      position: relative;
+      padding: 40px 20px;
+    }
 
-nav a {
-  color: #b2d8d8;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  margin-right: 8px;
-  display: inline-block;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
+    /* Individual feature cards */
+    .feature {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      padding: 20px;
+      background: #e9efff;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(33, 65, 89, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #1b1f3b;
+    }
+    .feature:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 20px rgba(33, 65, 89, 0.45);
+    }
 
-nav a:hover {
-  background-color: #1b3b50;
-  color: #e0f7f7;
-  transform: scale(1.05);
-}
+    /* Page background with gradient */
+    body.home {
+      background: linear-gradient(180deg, #2c3562 0%, #1e274d 50%, #1b1f3b 100%);
+      color: #e0f7f7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
-nav a.active {
-  background-color: #82c9a6;
-  color: #fff;
-  font-weight: 700;
-  transform: scale(1.1);
-}
+    /* Subtle noise overlay for texture */
+    body.home::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>') repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
 
-/* ===== Home Page Styling ===== */
-body.home {
-  background: linear-gradient(to right, #16364e, #1d4d66); /* Different shade from header */
-  color: #e0f7f7;
-}
+    /* Header distinct */
+    header {
+      background-color: #1b1f3b;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+      padding: 20px 40px;
+      color: #d4f1f9;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.5rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header h2.tagline {
+      margin: 5px 0 15px 0;
+      color: #a8bacc;
+      font-weight: 400;
+      font-size: 1.25rem;
+    }
+    header nav a {
+      color: #9bb8c0;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    header nav a:hover {
+      color: #00c8ff;
+    }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(to right, #1b3b50, #144566);
-  padding: 60px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  text-align: center;
-  max-width: 900px;
-  margin: 40px auto;
-}
+    /* Hero section styling */
+    .hero {
+      background: linear-gradient(to right, #324466cc, #214159cc);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      color: #d4f1f9;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.hero h2 {
-  font-size: 2.5em;
-  margin-bottom: 12px;
-  color: #82c9a6;
-}
+    /* Footer styling */
+    footer {
+      background: #1b1f3b;
+      border-top: 1px solid #305770;
+      color: #9bb8c0;
+      font-size: 0.9em;
+      user-select: none;
+      padding: 20px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1000;
+      margin-top: 60px;
+    }
+    footer a {
+      color: #7aa8bf;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    footer a:hover {
+      color: #00c8ff;
+    }
 
-.hero button {
-  background-color: #82c9a6;
-  color: #0f1b2a;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1.1em;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 30px;
+      }
+      header nav a {
+        display: inline-block;
+        margin: 5px 10px 0 0;
+      }
+    }
+  </style>
+</head>
+<body class="home">
 
-.hero button:hover {
-  background-color: #00c8ff;
-  color: #000;
-  transform: scale(1.05);
-}
+  <header>
+    <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="mentors.html">Mentors</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
 
-/* ===== Subpage Styling ===== */
-body.subpage {
-  background: linear-gradient(to right, #0f1b2a, #1d4662);
-  color: #e0f7f7;
-}
+  <main>
 
-body.subpage main {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px 40px;
-  background: #1b3b50;
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
-}
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-up">
+      <h2 data-aos="fade-right">Empowering Career Transitions and Growth</h2>
+      <p data-aos="fade-left">
+        Wistriva is your platform to find mentors, share experiences, and make career moves with confidence. 
+        Whether you're shifting industries, exploring new paths, or mentoring others — we connect people who grow together.
+      </p>
+      <button onclick="window.location.href='services.html'" class="btn" data-aos="zoom-in">Explore Services</button>
+    </section>
 
-body.subpage main h2 {
-  color: #82c9a6;
-}
+    <!-- Features Section with Images -->
+    <section class="container" data-aos="fade-up">
+      <div class="feature" data-aos="zoom-in">
+        <img src="mentor.jpg" alt="Mentorship" />
+        <h3>1:1 Mentorship</h3>
+        <p>Connect with mentors who've successfully transitioned careers. Ask questions, get advice, and accelerate your move.</p>
+        <a href="mentors.html" class="btn">Meet Mentors</a>
+      </div>
 
-/* ===== Smooth Animations ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      <div class="feature" data-aos="zoom-in">
+        <img src="network.jpg" alt="Networking" />
+        <h3>Peer Networking</h3>
+        <p>Join like-minded professionals through discussion spaces. Build connections that uplift and inform.</p>
+        <a href="community.html" class="btn">Join Community</a>
+      </div>
 
-.hero,
-body.subpage main {
-  animation: fadeIn 1.2s ease-in-out forwards;
-}
+      <div class="feature" data-aos="zoom-in">
+        <img src="knowledge.jpg" alt="Knowledge Sharing" />
+        <h3>Knowledge Sharing</h3>
+        <p>Explore articles, guides, and real-world case studies from professionals who’ve been where you are.</p>
+        <a href="resources.html" class="btn">View Resources</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Wistriva. All rights reserved. |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="faq.html">FAQ</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
