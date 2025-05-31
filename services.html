@@ -2,14 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services - Career Connect</title>
+  <title>Services - Striva</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    nav a {
+      text-decoration: none;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #cce7f0;
+    }
+    nav a.home {
+      background-color: #b2d8d8;
+      color: #064547;
+      font-weight: bold;
+    }
+    nav a.home:hover {
+      background-color: #8acccc;
+    }
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      font-family: Arial, sans-serif;
+      color: #444;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background-color: #f1f9f9;
+      margin-bottom: 12px;
+      padding: 12px;
+      border-left: 6px solid #8acccc;
+      border-radius: 4px;
+      font-size: 1.1em;
+    }
+    .mentor-card {
+      background-color: #fdfdfd;
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin-top: 24px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .mentor-card h4 {
+      margin-top: 0;
+    }
+    button {
+      background-color: #b2d8d8;
+      color: #064547;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #8acccc;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Our Services</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="home">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
@@ -17,20 +80,25 @@
   </header>
   <main>
     <ul>
-      <li>🔍 Browse professionals by career transition</li>
-      <li>💬 Ask questions and get expert answers</li>
-      <li>📅 Schedule a call or Q&A session</li>
-      <li>📚 Access curated resources & advice</li>
+      <li>🔍 Discover mentors by career shift (e.g., Tech → Finance, Software → Semiconductors)</li>
+      <li>💬 One-on-one Q&A with professionals who've walked your path</li>
+      <li>📅 Book mentorship calls, resume reviews, and mock interviews</li>
+      <li>📚 Curated guides, transition blueprints, and industry-specific learning paths</li>
+      <li>🌐 Access to exclusive live sessions & career workshops</li>
+      <li>🤝 Peer circles & discussion forums for shared journeys</li>
+      <li>🎯 Tools to track your career pivot goals and mentor feedback</li>
     </ul>
-    <h3>Example Expert</h3>
+
+    <h3>Featured Mentor</h3>
     <div class="mentor-card">
       <h4>Priya Sharma</h4>
-      <p>From Software Engineer → Semiconductor Engineer</p>
+      <p><strong>Career Path:</strong> Software Engineer → Semiconductor Engineer</p>
+      <p><strong>Expertise:</strong> DRAM/ASIC Verification, Synopsys Tools, Career Strategy</p>
       <button onclick="alert('You will be connected with Priya via email!')">Ask a Question</button>
     </div>
   </main>
   <footer>
-    <p>&copy; 2025 Career Connect</p>
+    <p>&copy; 2025 Striva</p>
   </footer>
 </body>
 </html>
