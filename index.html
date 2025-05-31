@@ -59,13 +59,15 @@
     header nav a:hover {
       color: #8ecae6;
     }
+    /* When a link is active (highlighted), make its background a darker green/teal, and text white */
     header nav a.active {
-      color: #8ecae6;
-      border-bottom: 2px solid #8ecae6;
-      padding-bottom: 2px;
-      cursor: default;
-      pointer-events: none;
+      background-color: #558b2f;   /* darker pastel‐green/teal */
+      color: #ffffff;              /* pure white for maximum contrast */
+      border-bottom: none;         /* remove any border if you want */
+      transform: scale(1.05);       /* optional: retain the “bump” effect */
+      pointer-events: none;        /* keep it non‐clickable when active */
     }
+
 
     /* ===== Hero Section ===== */
     .hero {
