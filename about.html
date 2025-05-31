@@ -5,38 +5,94 @@
   <title>About Us - Striva</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f8fbfc, #e6f7f7);
+      color: #444;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #e0f7f7;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: #064547;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    header h2.tagline {
+      font-weight: 400;
+      color: #3a7ca5;
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
       text-decoration: none;
       color: #333;
       padding: 8px 16px;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin: 0 5px;
+      display: inline-block;
     }
+
     nav a:hover {
       background-color: #cce7f0; /* light pastel blue on hover */
+      transform: scale(1.05);
     }
+
     nav a.home {
       background-color: #b2d8d8; /* pastel teal background for Home */
       color: #064547;
       font-weight: bold;
     }
+
     nav a.home:hover {
       background-color: #8acccc; /* darker pastel teal on hover */
     }
+
     main {
       max-width: 700px;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
+      margin: 40px auto 60px;
       line-height: 1.6;
+      font-size: 1.1em;
       color: #444;
+      padding: 0 20px;
     }
-    header h2.tagline {
-      font-weight: 400;
-      color: #3a7ca5;
-      font-style: italic;
-      margin-top: 0;
-      margin-bottom: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 20px;
+      background: #f0f7f7;
+      margin-top: 80px;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #b2d8d8, 0 0 10px #8acccc;
+      }
+      100% {
+        text-shadow: 0 0 15px #a1d9d9, 0 0 25px #064547;
+      }
     }
   </style>
 </head>
