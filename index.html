@@ -5,6 +5,82 @@
   <title>Striva - Home</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    body.home {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #007BFF;
+      padding: 15px 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: normal;
+    }
+    nav a.active, nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 60px auto 100px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    section.hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #003a8c;
+    }
+    section.hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #555;
+    }
+    section.hero button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    section.hero button:hover {
+      background: #0056b3;
+    }
+    section.tagline {
+      margin-top: 50px;
+      font-style: italic;
+      color: #555;
+      font-size: 1rem;
+    }
+    footer {
+      background: #f0f0f0;
+      padding: 15px 20px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
 </head>
 <body class="home">
   <header>
@@ -21,7 +97,11 @@
     <section class="hero" data-aos="fade-up">
       <h2 data-aos="fade-right">Navigate Bold Career Moves with Confidence</h2>
       <p data-aos="fade-left">Connect with mentors who’ve transitioned between industries—learn from their journey, ask questions, and find your path.</p>
-      <button onclick="window.location.href='services.html'" data-aos="zoom-in">Find a Mentor</button>
+      <button onclick="window.location.href='services.html'" data-aos="zoom-in" aria-label="Find a mentor">Find a Mentor</button>
+    </section>
+
+    <section class="tagline" data-aos="fade-up" data-aos-delay="300">
+      <p>Empowering your career growth by bridging experience and ambition through community mentorship.</p>
     </section>
   </main>
 
