@@ -33,11 +33,39 @@
       text-decoration: none;
       margin-right: 20px;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
+      position: relative;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-block;
     }
 
     nav a:hover {
       color: #00c8ff;
+      transform: scale(1.05);
+    }
+
+    nav a.active {
+      background: linear-gradient(270deg, #00c8ff, #1b1f3b, #00c8ff, #1b1f3b);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      color: #fff !important;
+      font-weight: 700;
+      transform: scale(1.1);
+      box-shadow: 0 0 8px #00c8ff;
+      cursor: default;
+    }
+
+    nav a.active:hover {
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     main {
@@ -122,6 +150,15 @@
     AOS.init({
       duration: 1000,
       once: true
+    });
+
+    // Highlight active nav link based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
     });
   </script>
 </body>
