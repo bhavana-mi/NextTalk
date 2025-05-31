@@ -23,9 +23,20 @@
       flex-shrink: 0;
     }
 
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 6px #14b8a6, 0 0 10px #0f172a;
+      }
+      50% {
+        text-shadow: 0 0 12px #22c7b1, 0 0 20px #0f172a;
+      }
+    }
+
     header h1 {
       margin: 0;
       font-size: 2rem;
+      animation: glow 3s ease-in-out infinite;
+      user-select: none;
     }
 
     .tagline {
@@ -45,6 +56,7 @@
       margin-right: 20px;
       font-weight: 600;
       transition: color 0.3s;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -55,6 +67,8 @@
       color: #14b8a6;
       border-bottom: 2px solid #14b8a6;
       padding-bottom: 2px;
+      cursor: default;
+      pointer-events: none;
     }
 
     main {
@@ -93,6 +107,7 @@
       color: #94a3b8;
       border-top: 1px solid #14b8a6;
       flex-shrink: 0;
+      user-select: none;
     }
 
     footer a {
@@ -121,7 +136,7 @@
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
       <a href="services.html">Services</a>
       <a href="mentors.html">Mentors</a>
       <a href="contact.html">Contact</a>
