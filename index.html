@@ -14,8 +14,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;  /* off-white background */
-      color: #1b1f3b;       /* dark navy text */
+      background: #FFFFFF;   /* pure white background (lighter than #F9F9F9) */
+      color: #1b1f3b;        /* dark navy text */
       overflow-x: hidden;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -30,7 +30,7 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      color: #f9f9f9; /* off-white text */
+      color: #f9f9f9;           /* off-white text */
     }
     header h1 {
       margin: 0;
@@ -42,7 +42,7 @@
       margin: 5px 0 15px 0;
       font-style: italic;
       font-family: 'Georgia', serif;
-      color: #d1d5db; /* light gray */
+      color: #d1d5db;           /* light gray */
       font-weight: 400;
       font-size: 1.25rem;
     }
@@ -54,29 +54,30 @@
       text-decoration: none;
       margin-right: 20px;
       font-weight: 600;
-      transition: color 0.3s ease;
       padding: 6px 12px;
       border-radius: 6px;
+      transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
       display: inline-block;
     }
     header nav a:hover {
-      color: #8ecae6;
+      color: #8ecae6;            /* light blue hover */
+      background-color: rgba(255,255,255,0.1);
+      transform: scale(1.03);
     }
     /* Active link highlighted with pastel-teal button */
     header nav a.active {
       background-color: #56B4BF; /* pastel-teal */
-      color: #FFFFFF;            /* white text */
+      color: #FFFFFF;           /* white text */
       font-weight: 700;
       transform: scale(1.05);
       pointer-events: none;
     }
 
-    /* ===== Hero Section =====
-       Using a public-domain image via Unsplash. Adjust URL as needed. */
+    /* ===== Hero Section ===== */
     .hero {
       background: 
         linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url('https://source.unsplash.com/featured/?mentorship,career') 
+        url('https://source.unsplash.com/featured/?mentorship,career')
         center/cover no-repeat;
       padding: 80px 20px;
       border-radius: 12px;
@@ -87,6 +88,7 @@
       position: relative;
       z-index: 1;
       color: #f9f9f9;           /* ensure text is white over image */
+      font-weight: 500;
     }
     .hero h2 {
       font-size: 2.5rem;
@@ -100,7 +102,7 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      color: #e0f7f7;           /* a slightly brigher pastel over image */
+      color: #e0f7f7;           /* slightly brighter pastel over image */
     }
     .btn {
       display: inline-block;
@@ -135,7 +137,7 @@
       min-width: 300px;
       text-align: center;
       padding: 20px;
-      background: #FFFFFF; /* white card so it stands out */
+      background: #FFFFFF;       /* white card (stands out on pure white page) */
       border-radius: 10px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -167,7 +169,7 @@
 
     /* ===== Footer ===== */
     footer {
-      background: #1b1f3b; /* navy footer */
+      background: #1b1f3b;       /* navy footer */
       border-top: 1px solid #305770;
       color: #d1d5db;
       font-size: 0.9em;
