@@ -17,6 +17,9 @@
       background-color: #1b1f3b;
       color: #fff;
       padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
@@ -34,10 +37,8 @@
       margin-right: 20px;
       font-weight: 500;
       transition: color 0.3s, transform 0.3s;
-      position: relative;
-      padding: 8px 12px;
+      padding: 6px 12px;
       border-radius: 6px;
-      cursor: pointer;
       display: inline-block;
     }
 
@@ -46,26 +47,13 @@
       transform: scale(1.05);
     }
 
+    /* Active link styling */
     nav a.active {
-      background: linear-gradient(270deg, #00c8ff, #1b1f3b, #00c8ff, #1b1f3b);
-      background-size: 400% 400%;
-      animation: gradientShift 8s ease infinite;
-      color: #fff !important;
+      color: #00c8ff;
       font-weight: 700;
+      background-color: rgba(0, 200, 255, 0.15);
       transform: scale(1.1);
-      box-shadow: 0 0 8px #00c8ff;
       cursor: default;
-    }
-
-    nav a.active:hover {
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     main {
@@ -125,7 +113,7 @@
   <header>
     <h1>Striva</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
@@ -150,15 +138,6 @@
     AOS.init({
       duration: 1000,
       once: true
-    });
-
-    // Highlight active nav link based on current page
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('nav a').forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
     });
   </script>
 </body>
