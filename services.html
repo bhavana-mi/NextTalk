@@ -2,90 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Services - Striva</title>
-  <style>
-    nav a {
-      color: #064547;
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      margin: 0 5px;
-      font-weight: 500;
-      transition: background-color 0.3s, color 0.3s, transform 0.3s;
-      display: inline-block;
-    }
-    nav a:hover {
-      background-color: #cce7f0;
-      color: #064547;
-      transform: scale(1.05);
-    }
-    nav a.active {
-      background-color: #b2d8d8;
-      color: #064547;
-      font-weight: 700;
-      transform: scale(1.1);
-      cursor: default;
-    }
-    body {
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(to bottom right, #f8fbfc, #e6f7f7);
-      color: #444;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #e0f7f7;
-      padding: 20px 40px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      color: #064547;
-      animation: glow 3s ease-in-out infinite alternate;
-    }
-    header h2.tagline {
-      font-weight: 400;
-      color: #3a7ca5;
-      font-style: italic;
-      margin-top: 5px;
-      margin-bottom: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    main {
-      max-width: 700px;
-      margin: 40px auto 60px;
-      line-height: 1.6;
-      font-size: 1.1em;
-      color: #444;
-      padding: 0 20px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #555;
-      padding: 20px;
-      background: #f0f7f7;
-      margin-top: 80px;
-    }
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 5px #b2d8d8, 0 0 10px #8acccc;
-      }
-      100% {
-        text-shadow: 0 0 15px #a1d9d9, 0 0 25px #064547;
-      }
-    }
-  </style>
+  <title>Striva - Services</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
-<body>
+<body class="subpage">
   <header>
     <h1>Our Services</h1>
-    <h2 class="tagline">Empowering Your Career Journey</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -93,17 +16,24 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
-    <p>At Striva, we offer a range of mentorship programs tailored to your career goals. Whether you’re looking to switch industries, level up your skills, or gain insights from experienced professionals, our mentors are here to guide you.</p>
-    <ul>
-      <li>One-on-one mentoring sessions</li>
-      <li>Industry-specific career advice</li>
-      <li>Networking opportunities</li>
-      <li>Workshops and webinars</li>
-    </ul>
+    <section data-aos="fade-up">
+      <h2>Mentorship Programs</h2>
+      <p>We connect you with industry mentors who guide you through career transitions, skill building, and networking.</p>
+    </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Striva</p>
+    <p>&copy; 2025 Striva. All rights reserved.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
