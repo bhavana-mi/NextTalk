@@ -4,32 +4,77 @@
   <meta charset="UTF-8" />
   <title>Striva - Home</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fbfc;
+      color: #333;
+    }
+
+    header {
+      background-color: #e0f7f7;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #064547;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
       text-decoration: none;
       color: #333;
       padding: 8px 16px;
       border-radius: 4px;
       transition: background-color 0.3s ease;
+      margin: 0 5px;
     }
+
     nav a:hover {
-      background-color: #cce7f0; /* light pastel blue on hover */
+      background-color: #cce7f0;
     }
+
     nav a.home {
-      background-color: #b2d8d8; /* pastel teal background for Home */
+      background-color: #b2d8d8;
       color: #064547;
       font-weight: bold;
     }
+
     nav a.home:hover {
-      background-color: #8acccc; /* darker pastel teal on hover */
+      background-color: #8acccc;
     }
-    main {
+
+    .hero {
       max-width: 700px;
-      margin: 30px auto;
-      font-family: Arial, sans-serif;
-      color: #444;
+      margin: 40px auto;
+      padding: 40px 20px;
       text-align: center;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
+
+    .hero h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #064547;
+    }
+
+    .hero p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
     button {
       background-color: #b2d8d8;
       color: #064547;
@@ -39,11 +84,21 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s ease;
-      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
+
     button:hover {
       background-color: #8acccc;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      padding: 20px;
+      background: #f0f7f7;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -57,13 +112,25 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
-    <h2>Welcome to Striva</h2>
-    <p>Connect with professionals who’ve made bold career moves — learn, ask, and grow!</p>
-    <button onclick="window.location.href='services.html'">Find a Mentor</button>
+    <section class="hero" data-aos="fade-up">
+      <h2 data-aos="fade-left">Welcome to Striva</h2>
+      <p data-aos="fade-right">Connect with professionals who’ve made bold career moves — learn, ask, and grow!</p>
+      <button onclick="window.location.href='services.html'" data-aos="zoom-in">Find a Mentor</button>
+    </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Striva</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
