@@ -13,8 +13,8 @@
     body.subpage {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1b1f3b;
-      color: #e0f7f7;
+      background: linear-gradient(to right, #0f1b2a, #1d4662);
+      color: #E0F7F7;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -71,32 +71,34 @@
       pointer-events: none;
     }
 
-    /* ===== Main Section Styling ===== */
+    /* ===== Main & Section Box Styling (Home Page Match) ===== */
     main {
-      max-width: 1000px;
+      max-width: 800px;
       margin: 60px auto;
-      padding: 20px;
+      padding: 20px 40px;
     }
+
     section {
-      background-color: #1b2d45;
+      background: #1B3B50; /* lighter navy box from homepage */
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      padding: 30px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+      padding: 30px 40px;
       margin-bottom: 40px;
     }
+
     section h2 {
+      color: #82C9A6;  /* pastel-teal heading inside box */
       font-family: Georgia, serif;
       font-size: 1.8rem;
-      color: #56B4BF;
       text-align: center;
     }
-    section p,
-    section ul {
-      font-family: Verdana, sans-serif;
+
+    section p, section ul {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #f0f0f0;
+      font-family: Verdana, sans-serif;
     }
+
     section ul {
       list-style-type: disc;
       padding-left: 40px;
@@ -123,14 +125,9 @@
       color: #ffffff;
     }
 
-    /* ===== Responsive ===== */
     @media (max-width: 768px) {
       main {
-        padding: 0 10px;
-        margin: 40px auto 60px;
-      }
-      section {
-        margin-bottom: 30px;
+        padding: 0 20px;
       }
       nav a {
         margin-right: 12px;
