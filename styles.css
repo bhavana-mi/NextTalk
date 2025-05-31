@@ -103,22 +103,49 @@ body.home {
 
 /* ===== Subpage Styling ===== */
 body.subpage {
-  background: linear-gradient(to right, #0f1b2a, #1d4662);
-  color: #E0F7F7;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1b1f3b; /* same dark navy background as homepage */
+  color: #e0f7f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Main content area styled like homepage cards/sections */
 body.subpage main {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px 40px;
-  background: #1B3B50;      /* slightly lighter navy for content box */
-  border-radius: 12px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
 }
 
+/* Section titles match home page styling */
 body.subpage main h2 {
-  color: #82C9A6;           /* pastel-teal heading inside box */
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  color: #56B4BF; /* pastel teal */
+  text-align: center;
+  margin-bottom: 15px;
 }
+
+/* General paragraph/text styling inside main */
+body.subpage main p,
+body.subpage main ul {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-family: Verdana, sans-serif;
+}
+
+/* Optional: mimic section boxes on home page */
+body.subpage section {
+  background-color: #1b2d45;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
 
 /* ===== Smooth Animations ===== */
 @keyframes fadeIn {
