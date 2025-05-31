@@ -14,7 +14,7 @@
     body.subpage {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1b1f3b; /* dark navy */
+      background-color: #1b1f3b; /* dark navy background */
       color: #e0f7f7;            /* pastel text */
       display: flex;
       flex-direction: column;
@@ -55,8 +55,9 @@
       font-weight: 600;
       padding: 6px 12px;
       border-radius: 6px;
-      transition: color 0.3s ease, background-color 0.3s ease;
       display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
     }
     nav a:hover {
       color: #8ecae6;            /* light blue */
@@ -69,7 +70,7 @@
       pointer-events: none;
     }
 
-    /* ===== Section Background Images ===== */
+    /* ===== Section Styles with Background Images ===== */
     section {
       position: relative;
       border-radius: 8px;
@@ -119,7 +120,7 @@
       margin-top: 10px;
     }
 
-    /* Specific section backgrounds */
+    /* Specific background images */
     .mission {
       background: url('https://source.unsplash.com/featured/?mission,goal') center/cover no-repeat;
     }
@@ -135,12 +136,12 @@
 
     /* ===== Footer ===== */
     footer {
-      background-color: #1b1f3b; /* navy */
+      background-color: #1b1f3b; /* navy footer */
       padding: 20px 40px;
       text-align: center;
       font-size: 0.9rem;
       color: #d1d5db;            /* light gray */
-      border-top: 1px solid #305770; /* teal border */
+      border-top: 1px solid #305770;
       user-select: none;
     }
     footer a {
