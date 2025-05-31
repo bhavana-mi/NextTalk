@@ -2,90 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Us - Striva</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(to bottom right, #f8fbfc, #e6f7f7);
-      color: #444;
-      overflow-x: hidden;
-    }
-    header {
-      background-color: #e0f7f7;
-      padding: 20px 40px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      color: #064547;
-      animation: glow 3s ease-in-out infinite alternate;
-    }
-    header h2.tagline {
-      font-weight: 400;
-      color: #3a7ca5;
-      font-style: italic;
-      margin-top: 5px;
-      margin-bottom: 20px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #064547; /* pastel teal */
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      margin: 0 5px;
-      display: inline-block;
-      font-weight: 500;
-      transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    }
-    nav a:hover {
-      background-color: #cce7f0;
-      color: #064547;
-      transform: scale(1.05);
-    }
-    nav a.active {
-      background-color: #b2d8d8;
-      color: #064547;
-      font-weight: 700;
-      transform: scale(1.1);
-      cursor: default;
-    }
-    main {
-      max-width: 700px;
-      margin: 40px auto 60px;
-      line-height: 1.6;
-      font-size: 1.1em;
-      color: #444;
-      padding: 0 20px;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #555;
-      padding: 20px;
-      background: #f0f7f7;
-      margin-top: 80px;
-    }
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 5px #b2d8d8, 0 0 10px #8acccc;
-      }
-      100% {
-        text-shadow: 0 0 15px #a1d9d9, 0 0 25px #064547;
-      }
-    }
-  </style>
+  <title>Striva - About</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
-<body>
+<body class="subpage">
   <header>
     <h1>About Striva</h1>
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
@@ -96,13 +17,24 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
-    <p>Striva is a platform dedicated to empowering professionals to strive boldly in their careers. We connect you with mentors who have made courageous transitions across industries — from tech to finance, software to semiconductors, and beyond.</p>
-    <p>At Striva, we believe that ambition and persistence lead to meaningful growth. Our community encourages learning, asking questions, and making bold moves that push your career forward.</p>
-    <p>Join Striva to explore new opportunities, gain valuable insights, and build connections with those who have paved the way before you. Together, we strive to achieve more.</p>
+    <section data-aos="fade-up">
+      <h2>Our Mission</h2>
+      <p>At Striva, we believe everyone deserves access to great mentorship and career guidance, helping you unlock your full potential.</p>
+    </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Striva</p>
+    <p>&copy; 2025 Striva. All rights reserved.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
