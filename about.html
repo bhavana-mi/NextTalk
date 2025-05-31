@@ -6,17 +6,21 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
-    body {
+    body.subpage {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
+      background-color: #0f172a; /* dark navy from home */
       margin: 0;
-      color: #1e293b;
+      color: #d1d5db; /* light text */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background-color: #002855;
+      background-color: #002855; /* same dark blue header */
       padding: 20px 40px;
       color: white;
+      flex-shrink: 0;
     }
 
     header h1 {
@@ -26,8 +30,9 @@
 
     .tagline {
       margin: 5px 0 20px;
-      font-size: 1.2rem;
-      color: #e0f2f1;
+      font-style: italic;
+      font-family: 'Georgia', serif;
+      color: #9ca3af; /* lighter grayish text */
     }
 
     nav {
@@ -35,10 +40,15 @@
     }
 
     nav a {
-      color: #cbd5e1;
+      color: #94a3b8; /* muted light blue */
       text-decoration: none;
       margin-right: 20px;
       font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #14b8a6; /* teal highlight */
     }
 
     nav a.active {
@@ -49,8 +59,9 @@
 
     main {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 60px auto 80px;
       padding: 0 40px;
+      flex-grow: 1;
     }
 
     section {
@@ -58,48 +69,63 @@
     }
 
     h2 {
-      color: #0f172a;
+      color: #e0f2f1; /* teal-ish light */
       font-size: 1.8rem;
       margin-bottom: 20px;
     }
 
-    p {
+    p, ul {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #475569;
+      color: #cbd5e1; /* light blue-gray */
     }
 
     ul {
       list-style-type: disc;
       padding-left: 20px;
-      color: #475569;
     }
 
     footer {
-      background-color: #f1f5f9;
+      background-color: #002855; /* dark blue footer */
       padding: 20px 40px;
       text-align: center;
       font-size: 0.9rem;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
+      color: #94a3b8;
+      border-top: 1px solid #14b8a6;
+      flex-shrink: 0;
+    }
+
+    footer a {
+      color: #14b8a6;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
       main {
         padding: 0 20px;
       }
+      nav a {
+        margin-right: 12px;
+      }
     }
   </style>
 </head>
 <body class="subpage">
   <header>
-    <h1>About Wistriva</h1>
+    <h1>Wistriva</h1>
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
       <a href="services.html">Services</a>
+      <a href="mentors.html">Mentors</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
   </header>
 
@@ -131,7 +157,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Wistriva. All rights reserved. | <a href="privacy.html" style="color:#64748b;">Privacy Policy</a>
+    &copy; 2025 Wistriva. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
