@@ -14,8 +14,8 @@
     body.subpage {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;     /* same off-white background as Home */
-      color: #1b1f3b;          /* same dark navy text as Home */
+      background-color: #1b1f3b; /* dark navy background */
+      color: #e0f7f7;            /* light pastel text for any unboxed text */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -23,7 +23,7 @@
 
     /* ===== Header & Nav ===== */
     header {
-      background-color: #1b1f3b; /* solid navy, identical to Home */
+      background-color: #1b1f3b; /* solid navy */
       padding: 20px 40px;
       position: sticky;
       top: 0;
@@ -42,7 +42,7 @@
       margin: 5px 0 15px 0;
       font-style: italic;
       font-family: 'Georgia', serif;
-      color: #d1d5db;            /* light gray, same as Home tagline */
+      color: #d1d5db;            /* light grayish to complement navy */
       font-weight: 400;
       font-size: 1.1rem;
     }
@@ -58,54 +58,63 @@
       cursor: pointer;
     }
     nav a:hover {
-      color: #8ecae6;            /* same light blue hover as Home */
+      color: #8ecae6;            /* light blue hover as Home */
     }
     nav a.active {
-      background-color: #56b4bf; /* pastel teal highlight (same as Home's .btn) */
-      color: #ffffff;           /* white text on active link */
+      background-color: #56b4bf; /* pastel teal highlight */
+      color: #ffffff;            /* white text */
       padding: 4px 8px;
       border-radius: 4px;
       cursor: default;
       pointer-events: none;
     }
 
-    /* ===== Main Content ===== */
+    /* ===== Main Content Container ===== */
     main {
       flex-grow: 1;
       max-width: 900px;
       margin: 60px auto 80px;
-      padding: 0 40px;
+      padding: 0 20px;
     }
+
+    /* Each section is an off-white “box” */
     section {
-      margin-bottom: 60px;
+      background-color: #f9f9f9; /* off-white box */
+      border-radius: 8px;
+      padding: 30px 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #1b1f3b;           /* dark navy text inside box */
     }
-    h2 {
-      color: #1b1f3b;          /* same dark navy heading as Home */
+    section h2 {
+      margin-top: 0;
+      color: #1b1f3b;           /* navy headings */
       font-size: 1.8rem;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
-    p, ul {
+    section p,
+    section ul {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #333333;         /* same dark charcoal for readability */
+      color: #333333;           /* dark charcoal for readability */
     }
-    ul {
+    section ul {
       list-style-type: disc;
       padding-left: 20px;
     }
 
     /* ===== Footer ===== */
     footer {
-      background-color: #1b1f3b; /* navy footer, matching Home header/footer */
+      background-color: #1b1f3b; /* navy footer to match header */
       padding: 20px 40px;
       text-align: center;
       font-size: 0.9rem;
       color: #d1d5db;            /* light gray text */
-      border-top: 1px solid #305770; /* subtle teal border */
+      border-top: 1px solid #305770; /* subtle teal top border */
       user-select: none;
     }
     footer a {
-      color: #8ecae6;            /* same light blue as Home hover */
+      color: #8ecae6;            /* light blue link */
       text-decoration: none;
       margin: 0 10px;
       transition: color 0.3s ease;
@@ -117,7 +126,12 @@
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
       main {
-        padding: 0 20px;
+        padding: 0 10px;
+        margin: 40px auto 60px;
+      }
+      section {
+        padding: 20px 15px;
+        margin-bottom: 30px;
       }
       nav a {
         margin-right: 12px;
@@ -144,17 +158,14 @@
     <section data-aos="fade-up">
       <h2>Our Mission</h2>
       <p>
-        Wistriva empowers individuals navigating career transitions through one-on-one mentorship,
-        peer support, and access to real-world insights. Whether you’re switching domains or
-        restarting your journey, we help you grow with clarity and confidence.
+        Wistriva empowers individuals navigating career transitions through one-on-one mentorship, peer support, and access to real-world insights. Whether you’re switching domains or restarting your journey, we help you grow with clarity and confidence.
       </p>
     </section>
 
     <section data-aos="fade-up" data-aos-delay="100">
       <h2>Our Vision</h2>
       <p>
-        We envision a world where access to mentorship is universal, career change is courageous,
-        and every professional feels supported—not alone—when pursuing change.
+        We envision a world where access to mentorship is universal, career change is courageous, and every professional feels supported—not alone—when pursuing change.
       </p>
     </section>
 
@@ -171,16 +182,13 @@
     <section data-aos="fade-up" data-aos-delay="300">
       <h2>Our Story</h2>
       <p>
-        Wistriva began as a simple idea—career change should feel empowering, not isolating.
-        Founded by industry switchers who faced the chaos of change firsthand, we built Wistriva
-        to create what we wish we had: a network of guides, a hub of advice, and a community that gets it.
+        Wistriva began as a simple idea—career change should feel empowering, not isolating. Founded by industry switchers who faced the chaos of change firsthand, we built Wistriva to create what we wish we had: a network of guides, a hub of advice, and a community that gets it.
       </p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Wistriva. All rights reserved. |
-    <a href="privacy.html">Privacy Policy</a>
+    &copy; 2025 Wistriva. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
