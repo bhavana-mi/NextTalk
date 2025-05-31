@@ -2,318 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Wistriva - Empower Your Career</title>
+  <title>Wistriva - Home</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9fafb;
-      color: #222;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    header {
-      background-color: #002855;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header h1 {
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      margin: 0;
-    }
-    nav a {
-      color: #cbd5e1;
-      margin-left: 25px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover, nav a.active {
-      color: #14b8a6; /* teal accent */
-      border-bottom: 2px solid #14b8a6;
-      padding-bottom: 4px;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 60px auto 120px;
-      padding: 0 40px;
-    }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .hero-content {
-      flex: 1 1 450px;
-    }
-
-    .hero-content h2 {
-      font-size: 2.8rem;
-      color: #0f172a;
-      margin-bottom: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      color: #475569;
-      margin-bottom: 30px;
-    }
-
-    .hero-content button {
-      background-color: #14b8a6;
-      color: white;
-      font-weight: 600;
-      border: none;
-      padding: 14px 36px;
-      font-size: 1.1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgb(20 184 166 / 0.3);
-    }
-
-    .hero-content button:hover {
-      background-color: #0d9488;
-      box-shadow: 0 6px 12px rgb(13 148 136 / 0.5);
-    }
-
-    .hero-image {
-      flex: 1 1 400px;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
-    }
-
-    .values {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 80px;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .value-box {
-      background: white;
-      flex: 1 1 300px;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgb(0 0 0 / 0.05);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .value-box:hover {
-      box-shadow: 0 0 20px rgb(20 184 166 / 0.3);
-    }
-
-    .value-box h3 {
-      color: #0f172a;
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .value-box p {
-      color: #475569;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    /* Mentors Section */
-    .mentors {
-      margin-top: 100px;
-    }
-    .mentors h2 {
-      font-size: 2rem;
-      color: #0f172a;
-      font-weight: 700;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-    .mentor-list {
-      display: flex;
-      gap: 30px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .mentor-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgb(0 0 0 / 0.1);
-      max-width: 280px;
-      padding: 25px;
-      text-align: center;
-      transition: box-shadow 0.3s ease;
-    }
-    .mentor-card:hover {
-      box-shadow: 0 0 25px rgb(20 184 166 / 0.4);
-    }
-    .mentor-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #14b8a6;
-    }
-    .mentor-name {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 6px;
-    }
-    .mentor-title {
-      font-size: 0.95rem;
-      color: #64748b;
-      margin-bottom: 12px;
-    }
-    .mentor-desc {
-      font-size: 0.9rem;
-      color: #475569;
-      line-height: 1.3;
-    }
-
-    /* Privacy Policy Section */
-    .privacy-policy {
-      margin-top: 120px;
-      background-color: #e0f2f1;
-      border-radius: 12px;
-      padding: 30px 40px;
-      color: #0f172a;
-    }
-    .privacy-policy h2 {
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .privacy-policy p {
-      font-size: 1rem;
-      line-height: 1.5;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #134e4a;
-    }
-
-    footer {
-      background-color: #f1f5f9;
-      padding: 25px 40px;
-      text-align: center;
-      color: #64748b;
-      font-size: 0.9rem;
-      border-top: 1px solid #e2e8f0;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero-image {
-        max-width: 100%;
-      }
-      .values {
-        flex-direction: column;
-      }
-      .value-box {
-        max-width: 100%;
-      }
-      .mentor-list {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="home">
   <header>
     <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
+      <a href="mentors.html">Mentors</a>
       <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" data-aos="fade-up">
-      <div class="hero-content" data-aos="fade-right">
-        <h2>Empowering Your Career Transition with Mentorship & Community</h2>
-        <p>Wistriva connects professionals moving between industries with expert mentors and a vibrant community, helping you build skills, confidence, and meaningful connections.</p>
-        <button onclick="window.location.href='services.html'" aria-label="Explore Services">Explore Services</button>
-      </div>
-      <div class="hero-image" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Professional mentorship and career growth" />
-      </div>
+      <h2 data-aos="fade-right">Navigate Bold Career Moves with Confidence</h2>
+      <p data-aos="fade-left">Connect with mentors who’ve transitioned between industries—learn from their journey, ask questions, and find your path.</p>
+      <button onclick="window.location.href='services.html'" data-aos="zoom-in">Find a Mentor</button>
     </section>
+  </main>
 
-    <section class="values" data-aos="fade-up" data-aos-delay="300">
-      <div class="value-box">
-        <h3>Personalized Mentorship</h3>
-        <p>One-on-one guidance tailored to your unique career goals and challenges.</p>
-      </div>
-      <div class="value-box">
-        <h3>Community Support</h3>
-        <p>Engage with peers and experts in group discussions, forums, and events.</p>
-      </div>
-      <div class="value-box">
-        <h3>Skill Development</h3>
-        <p>Access curated learning resources and workshops designed to boost your expertise.</p>
-      </div>
-    </section>
+  <footer>
+    &copy; 2025 Wistriva. All rights reserved. | <a href="privacy.html">Privacy Policy</a>
+  </footer>
 
-    <section class="mentors" data-aos="fade-up" data-aos-delay="600">
-      <h2>Meet Our Mentors</h2>
-      <div class="mentor-list">
-        <div class="mentor-card">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Mentor Sarah Lee" class="mentor-photo" />
-          <div class="mentor-name">Sarah Lee</div>
-          <div class="mentor-title">IT Industry Expert</div>
-          <div class="mentor-desc">Sarah transitioned from BPO to IT and has 10+ years of experience helping professionals find their path.</div>
-        </div>
-        <div class="mentor-card">
-          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Mentor Raj Patel" class="mentor-photo" />
-          <div class="mentor-name">Raj Patel</div>
-          <div class="mentor-title">Career Coach</div>
-          <div class="mentor-desc">Raj specializes in career transitions, mentoring over 500 mentees across various industries.</div>
-        </div>
-        <div class="mentor-card">
-          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Mentor Emily Zhang" class="mentor-photo" />
-          <div class="mentor-name">Emily Zhang</div>
-          <div class="mentor-title">Tech Mentor & Trainer</div>
-          <div class="mentor-desc">Emily provides technical guidance and skill development workshops for career changers.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="privacy-policy" data-aos="fade-up" data-aos-delay="900">
-      <h2>Privacy Policy Summary</h2
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
