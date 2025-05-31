@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>About Us - Striva</title>
-  <link rel="stylesheet" href="css/style.css" />
   <style>
     body {
       margin: 0;
@@ -53,6 +52,7 @@
       display: inline-block;
       position: relative;
       font-weight: 600;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -60,22 +60,13 @@
       transform: scale(1.05);
     }
 
-    /* Base style for Home link */
-    nav a.home {
-      background-color: #b2d8d8;
-      color: #064547;
-    }
-
-    nav a.home:hover {
-      background-color: #8acccc;
-    }
-
     /* Active page link style */
     nav a.active {
       background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
-      background-size: 600% 600%;
-      color: #064547;
-      animation: gradientShift 8s ease infinite;
+      background-size: 400% 400%;
+      background-repeat: no-repeat;
+      color: #064547 !important;
+      animation: gradientShift 12s ease infinite;
       box-shadow: 0 0 10px #64bfbf, 0 0 20px #8acccc;
       transform: scale(1.1);
       font-weight: 700;
@@ -83,7 +74,6 @@
     }
 
     nav a.active:hover {
-      /* Keep the highlight and remove hover scale to avoid flicker */
       transform: scale(1.1);
       background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
     }
@@ -133,10 +123,10 @@
     <h1>About Striva</h1>
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
-      <a href="index.html" class="home">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" id="nav-home">Home</a>
+      <a href="about.html" id="nav-about">About</a>
+      <a href="services.html" id="nav-services">Services</a>
+      <a href="contact.html" id="nav-contact">Contact</a>
     </nav>
   </header>
   <main>
@@ -149,5 +139,30 @@
   <footer>
     <p>&copy; 2025 Striva</p>
   </footer>
+
+  <script>
+    // Get current page filename
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    
+    // Select all nav links
+    const navLinks = document.querySelectorAll("nav a");
+
+    // Flag to check if any link matched current page
+    let matched = false;
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+        matched = true;
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    // If none matched, highlight home
+    if (!matched) {
+      document.getElementById("nav-home").classList.add("active");
+    }
+  </script>
 </body>
 </html>
