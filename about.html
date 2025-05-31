@@ -14,8 +14,8 @@
     body.subpage {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1b1f3b; /* dark navy background */
-      color: #e0f7f7;            /* light pastel text for any unboxed text */
+      background-color: #1b1f3b; /* dark navy */
+      color: #e0f7f7;            /* pastel text */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -23,7 +23,7 @@
 
     /* ===== Header & Nav ===== */
     header {
-      background-color: #1b1f3b; /* solid navy */
+      background-color: #1b1f3b; /* navy */
       padding: 20px 40px;
       position: sticky;
       top: 0;
@@ -33,16 +33,15 @@
     }
     header h1 {
       margin: 0;
+      font-family: Georgia, serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #f9f9f9;
-      user-select: none;
     }
     header h2.tagline {
       margin: 5px 0 15px 0;
+      font-family: Georgia, serif;
       font-style: italic;
-      font-family: 'Georgia', serif;
-      color: #d1d5db;            /* light grayish to complement navy */
+      color: #d1d5db;            /* light gray */
       font-weight: 400;
       font-size: 1.1rem;
     }
@@ -50,71 +49,102 @@
       margin-top: 10px;
     }
     nav a {
-      color: #d1d5db;            /* same muted gray as Home nav */
+      color: #d1d5db;            /* muted gray */
       text-decoration: none;
       margin-right: 20px;
       font-weight: 600;
-      transition: color 0.3s ease;
-      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      display: inline-block;
     }
     nav a:hover {
-      color: #8ecae6;            /* light blue hover as Home */
+      color: #8ecae6;            /* light blue */
+      background-color: rgba(255,255,255,0.1);
     }
     nav a.active {
-      background-color: #56b4bf; /* pastel teal highlight */
-      color: #ffffff;            /* white text */
-      padding: 4px 8px;
-      border-radius: 4px;
-      cursor: default;
+      background-color: #56B4BF; /* pastel teal */
+      color: #FFFFFF;            /* white text */
+      font-weight: 700;
       pointer-events: none;
     }
 
-    /* ===== Main Content Container ===== */
-    main {
-      flex-grow: 1;
-      max-width: 900px;
-      margin: 60px auto 80px;
-      padding: 0 20px;
-    }
-
-    /* Each section is an off-white “box” */
+    /* ===== Section Background Images ===== */
     section {
-      background-color: #f9f9f9; /* off-white box */
+      position: relative;
       border-radius: 8px;
-      padding: 30px 20px;
       margin-bottom: 40px;
+      overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      color: #1b1f3b;           /* dark navy text inside box */
+      min-height: 300px;
+      color: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* dark overlay */
+      z-index: 1;
+    }
+    section h2,
+    section p,
+    section ul {
+      position: relative;
+      z-index: 2;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
     }
     section h2 {
-      margin-top: 0;
-      color: #1b1f3b;           /* navy headings */
+      font-family: Georgia, serif;
       font-size: 1.8rem;
       margin-bottom: 15px;
+      color: #56B4BF; /* pastel teal heading */
+      text-align: center;
     }
     section p,
     section ul {
+      font-family: Verdana, sans-serif;
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #333333;           /* dark charcoal for readability */
+      color: #f0f0f0;
     }
     section ul {
       list-style-type: disc;
-      padding-left: 20px;
+      padding-left: 40px;
+      margin-top: 10px;
+    }
+
+    /* Specific section backgrounds */
+    .mission {
+      background: url('https://source.unsplash.com/featured/?mission,goal') center/cover no-repeat;
+    }
+    .vision {
+      background: url('https://source.unsplash.com/featured/?vision,future') center/cover no-repeat;
+    }
+    .values {
+      background: url('https://source.unsplash.com/featured/?teamwork,values') center/cover no-repeat;
+    }
+    .story {
+      background: url('https://source.unsplash.com/featured/?journey,story') center/cover no-repeat;
     }
 
     /* ===== Footer ===== */
     footer {
-      background-color: #1b1f3b; /* navy footer to match header */
+      background-color: #1b1f3b; /* navy */
       padding: 20px 40px;
       text-align: center;
       font-size: 0.9rem;
-      color: #d1d5db;            /* light gray text */
-      border-top: 1px solid #305770; /* subtle teal top border */
+      color: #d1d5db;            /* light gray */
+      border-top: 1px solid #305770; /* teal border */
       user-select: none;
     }
     footer a {
-      color: #8ecae6;            /* light blue link */
+      color: #8ecae6;
       text-decoration: none;
       margin: 0 10px;
       transition: color 0.3s ease;
@@ -130,7 +160,7 @@
         margin: 40px auto 60px;
       }
       section {
-        padding: 20px 15px;
+        min-height: 250px;
         margin-bottom: 30px;
       }
       nav a {
@@ -155,21 +185,21 @@
   </header>
 
   <main>
-    <section data-aos="fade-up">
+    <section class="mission" data-aos="fade-up">
       <h2>Our Mission</h2>
       <p>
         Wistriva empowers individuals navigating career transitions through one-on-one mentorship, peer support, and access to real-world insights. Whether you’re switching domains or restarting your journey, we help you grow with clarity and confidence.
       </p>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="100">
+    <section class="vision" data-aos="fade-up" data-aos-delay="100">
       <h2>Our Vision</h2>
       <p>
         We envision a world where access to mentorship is universal, career change is courageous, and every professional feels supported—not alone—when pursuing change.
       </p>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="200">
+    <section class="values" data-aos="fade-up" data-aos-delay="200">
       <h2>Core Values</h2>
       <ul>
         <li><strong>Empathy:</strong> We listen deeply and lead with understanding.</li>
@@ -179,7 +209,7 @@
       </ul>
     </section>
 
-    <section data-aos="fade-up" data-aos-delay="300">
+    <section class="story" data-aos="fade-up" data-aos-delay="300">
       <h2>Our Story</h2>
       <p>
         Wistriva began as a simple idea—career change should feel empowering, not isolating. Founded by industry switchers who faced the chaos of change firsthand, we built Wistriva to create what we wish we had: a network of guides, a hub of advice, and a community that gets it.
