@@ -7,131 +7,71 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
-    /* Tagline style */
-    .tagline {
-      font-style: italic;
-      font-family: 'Georgia', serif;
-      color: #4a6a4a;
+    /* ===== Reset & Base ===== */
+    * {
+      box-sizing: border-box;
     }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #6aa84f; /* pastel green */
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
-      font-weight: 600;
-      box-shadow: 0 3px 6px rgba(106,168,79,0.4);
-    }
-    .btn:hover {
-      background-color: #558b2f;
-      color: white;
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(85,139,47,0.5);
-    }
-
-    /* Feature images */
-    .feature img {
-      width: 100%;
-      max-height: 200px;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 2px 6px rgba(102,119,102,0.2);
-    }
-
-    /* Container for features */
-    .container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-      z-index: 1;
-      position: relative;
-      padding: 40px 20px;
-    }
-
-    /* Individual feature cards */
-    .feature {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-      padding: 20px;
-      background: #f0f8e8; /* very light pastel green */
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(106,168,79,0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #375a29; /* darker green text */
-      font-weight: 500;
-    }
-    .feature:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 10px 20px rgba(85,139,47,0.45);
-    }
-
-    /* Page background with pastel green gradient */
-    body.home {
-      background: linear-gradient(180deg, #e2f0d9 0%, #c3dba1 50%, #b0c88b 100%);
-      color: #375a29;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-      overflow-x: hidden;
+    body {
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;  /* off-white background */
+      color: #1b1f3b;       /* dark navy text */
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Subtle noise overlay for texture */
-    body.home::before {
-      content: "";
-      pointer-events: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.04"/></svg>') repeat;
-      opacity: 0.04;
-      z-index: 0;
-    }
-
-    /* Header distinct with cream background */
+    /* ===== Header & Nav ===== */
     header {
-      background-color: #dcedc1; /* pale cream green */
-      box-shadow: 0 4px 8px rgba(85, 139, 47, 0.2);
+      background-color: #1b1f3b; /* solid navy */
+      padding: 20px 40px;
       position: sticky;
       top: 0;
-      z-index: 1001;
-      padding: 20px 40px;
-      color: #375a29;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #f9f9f9; /* off-white text */
     }
     header h1 {
       margin: 0;
-      font-weight: 700;
       font-size: 2.5rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      color: #f9f9f9;
     }
     header h2.tagline {
       margin: 5px 0 15px 0;
-      color: #6aa84f;
+      font-style: italic;
+      font-family: 'Georgia', serif;
+      color: #d1d5db; /* light gray */
       font-weight: 400;
       font-size: 1.25rem;
     }
+    header nav {
+      margin-top: 10px;
+    }
     header nav a {
-      color: #558b2f;
+      color: #d1d5db;
       text-decoration: none;
       margin-right: 20px;
       font-weight: 600;
       transition: color 0.3s ease;
     }
     header nav a:hover {
-      color: #375a29;
+      color: #8ecae6;
+    }
+    header nav a.active {
+      color: #8ecae6;
+      border-bottom: 2px solid #8ecae6;
+      padding-bottom: 2px;
+      cursor: default;
+      pointer-events: none;
     }
 
-    /* Hero section styling with cream background */
+    /* ===== Hero Section ===== */
     .hero {
-      background: #dcedc1;
-      box-shadow: 0 4px 15px rgba(85,139,47,0.3);
-      color: #375a29;
+      background: #ffffff; /* pure white */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      color: #1b1f3b;
       padding: 60px 20px;
       max-width: 900px;
       margin: 40px auto;
@@ -153,13 +93,76 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+      color: #444444;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #6aa84f; /* pastel green */
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgba(106,168,79,0.4);
+    }
+    .btn:hover {
+      background-color: #558b2f;
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(85,139,47,0.5);
     }
 
-    /* Footer styling with cream background */
+    /* ===== Features Section ===== */
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+      padding: 40px 20px;
+    }
+    .feature {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      padding: 20px;
+      background: #ffffff; /* white card */
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #1b1f3b;
+      font-weight: 500;
+    }
+    .feature:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .feature img {
+      width: 100%;
+      max-height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      color: #375a29;
+    }
+    .feature p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #555555;
+    }
+
+    /* ===== Footer ===== */
     footer {
-      background: #dcedc1;
-      border-top: 1px solid #a1c77c;
-      color: #558b2f;
+      background: #1b1f3b; /* navy footer */
+      border-top: 1px solid #305770;
+      color: #d1d5db;
       font-size: 0.9em;
       user-select: none;
       padding: 20px 40px;
@@ -170,16 +173,16 @@
       font-weight: 600;
     }
     footer a {
-      color: #6aa84f;
+      color: #8ecae6;
       text-decoration: none;
       margin: 0 10px;
       transition: color 0.3s ease;
     }
     footer a:hover {
-      color: #375a29;
+      color: #ffffff;
     }
 
-    /* Responsive tweaks */
+    /* ===== Responsive tweaks ===== */
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -198,7 +201,7 @@
     <h1>Wistriva</h1>
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="mentors.html">Mentors</a>
