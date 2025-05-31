@@ -141,16 +141,17 @@ body.home nav a.active {
 }
 
 /* ===== Subpage styles updated ===== */
+/* ===== Subpage styles harmonized with home page colors ===== */
 body.subpage {
-  background: #1b1f3b;
-  color: #d4f1f9;
+  background: #1b1f3b;    /* same dark navy as home */
+  color: #e0f7f7;         /* same light pastel text as home */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body.subpage header {
-  background-color: #162030; /* slightly darker navy */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
-  color: #b2d8d8;
+  background-color: #1b1f3b; /* same as home header bg */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25); /* same as home header */
+  color: #56b4bf;             /* pastel teal same as home header h1 */
   text-align: center;
   user-select: none;
   padding-bottom: 10px;
@@ -158,14 +159,14 @@ body.subpage header {
 
 body.subpage header h1 {
   font-size: 2.2rem;
-  color: #56b4bf;
+  color: #56b4bf; /* pastel teal */
   animation: glow 3s ease-in-out infinite alternate;
   margin-bottom: 5px;
 }
 
 body.subpage header h2.tagline {
   font-weight: 400;
-  color: #8bd3dd;
+  color: #b2d8d8;          /* lighter pastel teal-ish */
   font-style: italic;
   font-family: 'Georgia', serif;
   margin-top: 0;
@@ -180,19 +181,19 @@ body.subpage nav {
 }
 
 body.subpage nav a {
-  color: #b2d8d8;
+  color: #b2d8d8;           /* pastel light text */
   margin-right: 20px;
   font-weight: 600;
 }
 
 body.subpage nav a:hover {
-  background-color: #305770;
+  background-color: #305770; /* slightly lighter blue */
   color: #e0f7f7;
   transform: scale(1.05);
 }
 
 body.subpage nav a.active {
-  background-color: #56b4bf;
+  background-color: #56b4bf; /* pastel teal */
   color: #fff;
   font-weight: 700;
   transform: scale(1.1);
@@ -204,19 +205,19 @@ body.subpage nav a.active {
 body.subpage main {
   max-width: 800px;
   margin: 50px auto 70px;
-  padding: 0 40px;
+  padding: 30px 40px;
   font-size: 1.1em;
   line-height: 1.6;
-  color: #d4f1f9;
-  background: #243353;
-  border-radius: 10px;
+  color: #e0f7f7;            /* pastel light text */
+  background: #243353;       /* a darker bluish shade similar to home hero */
+  border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.8);
   animation: fadeIn 1.2s ease forwards;
 }
 
 /* Subpage headings */
 body.subpage main h2 {
-  color: #a1d9d9;
+  color: #56b4bf;            /* pastel teal */
   margin-bottom: 20px;
   text-shadow: 0 0 8px #56b4bf;
 }
@@ -224,7 +225,7 @@ body.subpage main h2 {
 /* Subpage paragraphs and lists */
 body.subpage main p, 
 body.subpage main ul {
-  color: #c2e7ea;
+  color: #d4f1f9;            /* light pastel text */
 }
 
 /* Footer */
@@ -233,7 +234,7 @@ footer {
   font-size: 0.9em;
   color: #64748b;
   padding: 20px 40px;
-  background: #162030;
+  background: #1b1f3b;        /* same dark navy as body */
   user-select: none;
   border-top: 1px solid #305770;
 }
