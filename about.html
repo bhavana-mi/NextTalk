@@ -3,43 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <title>Wistriva - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
-    /* ===== Base & Reset ===== */
+    /* ===== Reset & Base ===== */
     * {
       box-sizing: border-box;
     }
     body.subpage {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;        /* off-white background */
-      color: #1b1f3b;                   /* dark navy text */
       margin: 0;
-      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;     /* same off-white background as Home */
+      color: #1b1f3b;          /* same dark navy text as Home */
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     /* ===== Header & Nav ===== */
     header {
-      background-color: #002855;        /* solid navy */
+      background-color: #1b1f3b; /* solid navy, identical to Home */
       padding: 20px 40px;
-      flex-shrink: 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      color: #f9f9f9;                   /* off-white text */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #f9f9f9;            /* off-white text */
     }
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: #f9f9f9;
       user-select: none;
     }
     header h2.tagline {
-      margin: 5px 0 20px;
+      margin: 5px 0 15px 0;
       font-style: italic;
       font-family: 'Georgia', serif;
-      color: #cbd5e1;                   /* light grayish text */
+      color: #d1d5db;            /* light gray, same as Home tagline */
       font-weight: 400;
       font-size: 1.1rem;
     }
@@ -47,7 +50,7 @@
       margin-top: 10px;
     }
     nav a {
-      color: #cbd5e1;                   /* muted gray */
+      color: #d1d5db;            /* same muted gray as Home nav */
       text-decoration: none;
       margin-right: 20px;
       font-weight: 600;
@@ -55,11 +58,11 @@
       cursor: pointer;
     }
     nav a:hover {
-      color: #14b8a6;                   /* teal highlight */
+      color: #8ecae6;            /* same light blue hover as Home */
     }
     nav a.active {
-      background-color: #14b8a6;        /* teal highlight */
-      color: #ffffff;                   /* white text on active */
+      background-color: #56b4bf; /* pastel teal highlight (same as Home's .btn) */
+      color: #ffffff;           /* white text on active link */
       padding: 4px 8px;
       border-radius: 4px;
       cursor: default;
@@ -68,23 +71,23 @@
 
     /* ===== Main Content ===== */
     main {
+      flex-grow: 1;
       max-width: 900px;
       margin: 60px auto 80px;
       padding: 0 40px;
-      flex-grow: 1;
     }
     section {
       margin-bottom: 60px;
     }
     h2 {
-      color: #002855;                   /* navy headings */
+      color: #1b1f3b;          /* same dark navy heading as Home */
       font-size: 1.8rem;
       margin-bottom: 20px;
     }
     p, ul {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #333333;                   /* dark charcoal for readability */
+      color: #333333;         /* same dark charcoal for readability */
     }
     ul {
       list-style-type: disc;
@@ -93,22 +96,22 @@
 
     /* ===== Footer ===== */
     footer {
-      background-color: #002855;        /* same navy as header */
+      background-color: #1b1f3b; /* navy footer, matching Home header/footer */
       padding: 20px 40px;
       text-align: center;
       font-size: 0.9rem;
-      color: #cbd5e1;                   /* light gray text */
-      border-top: 1px solid #14b8a6;    /* teal border */
-      flex-shrink: 0;
+      color: #d1d5db;            /* light gray text */
+      border-top: 1px solid #305770; /* subtle teal border */
       user-select: none;
     }
     footer a {
-      color: #14b8a6;
+      color: #8ecae6;            /* same light blue as Home hover */
       text-decoration: none;
-      margin-left: 8px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
     }
     footer a:hover {
-      text-decoration: underline;
+      color: #ffffff;
     }
 
     /* ===== Responsive ===== */
@@ -123,6 +126,7 @@
   </style>
 </head>
 <body class="subpage">
+
   <header>
     <h1>Wistriva</h1>
     <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
