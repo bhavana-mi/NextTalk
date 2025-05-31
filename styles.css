@@ -5,33 +5,28 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #1b1f3b;  /* dark navy background for all pages */
-  color: #e0f7f7;       /* light pastel text */
+  background: #0f1b2a;  /* deep navy */
+  color: #e0f7f7;       /* pastel text */
   overflow-x: hidden;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== Header & Nav Common ===== */
+/* ===== Header & Navigation ===== */
 header {
   padding: 20px 40px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #1b1f3b; /* dark navy */
+  background-color: #0f1b2a; /* deep navy */
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  color: #b2d8d8;
-  user-select: none;
-  transition: background-color 0.3s ease;
+  color: #82c9a6; /* palette green */
 }
 
 header h1 {
   margin: 0;
   font-size: 2em;
   font-weight: 700;
-  color: #56b4bf; /* pastel teal */
-  animation: glow 3s ease-in-out infinite alternate;
+  color: #82c9a6; /* palette green */
 }
 
 nav {
@@ -43,95 +38,56 @@ nav a {
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 6px;
-  margin: 0 8px 0 0;
+  margin-right: 8px;
   display: inline-block;
   font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #305770; /* slightly lighter blue */
+  background-color: #1b3b50; /* darker blue */
   color: #e0f7f7;
   transform: scale(1.05);
 }
 
 nav a.active {
-  background-color: #56b4bf; /* pastel teal */
+  background-color: #82c9a6; /* palette green */
   color: #fff;
   font-weight: 700;
   transform: scale(1.1);
-  cursor: default;
-  pointer-events: none;
 }
 
-/* ===== Home page specific styles ===== */
+/* ===== Home Page Styling ===== */
 body.home {
-  background: #1b1f3b;
+  background: linear-gradient(to right, #0f1b2a, #16364e);
   color: #e0f7f7;
 }
 
-body.home header {
-  background-color: #1b1f3b;
-  color: #b2d8d8;
-  box-shadow: none;
-}
-
-body.home nav a {
-  color: #b2d8d8;
-  margin-right: 20px;
-}
-
-body.home nav a:hover {
-  background-color: #305770;
-  color: #e0f7f7;
-  transform: scale(1.05);
-}
-
-body.home nav a.active {
-  background-color: #56b4bf;
-  color: #fff;
-  font-weight: 700;
-  transform: scale(1.1);
-  cursor: default;
-  pointer-events: none;
-}
-
-/* Home hero */
 .hero {
-  background: linear-gradient(to right, #2a3250, #214159);
+  background: linear-gradient(to right, #1b3b50, #144566);
   padding: 60px 30px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.6);
   text-align: center;
   max-width: 900px;
   margin: 40px auto;
-  color: #d4f1f9;
 }
 
 .hero h2 {
   font-size: 2.5em;
   margin-bottom: 12px;
-  text-shadow: 0 0 5px #56b4bf;
-}
-
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  margin-bottom: 30px;
-  font-weight: 500;
+  color: #82c9a6;
 }
 
 .hero button {
-  background-color: #56b4bf;
-  color: #1b1f3b;
+  background-color: #82c9a6;
+  color: #0f1b2a;
   border: none;
   padding: 14px 28px;
   font-size: 1.1em;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  font-weight: 700;
+  transition: 0.3s ease;
 }
 
 .hero button:hover {
@@ -140,133 +96,38 @@ body.home nav a.active {
   transform: scale(1.05);
 }
 
-/* ===== Subpage styles updated ===== */
-/* ===== Subpage styles harmonized with home page colors ===== */
+/* ===== Subpage Styling ===== */
 body.subpage {
-  background: #1b1f3b;    /* same dark navy as home */
-  color: #e0f7f7;         /* same light pastel text as home */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body.subpage header {
-  background-color: #1b1f3b; /* same as home header bg */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25); /* same as home header */
-  color: #56b4bf;             /* pastel teal same as home header h1 */
-  text-align: center;
-  user-select: none;
-  padding-bottom: 10px;
-}
-
-body.subpage header h1 {
-  font-size: 2.2rem;
-  color: #56b4bf; /* pastel teal */
-  animation: glow 3s ease-in-out infinite alternate;
-  margin-bottom: 5px;
-}
-
-body.subpage header h2.tagline {
-  font-weight: 400;
-  color: #b2d8d8;          /* lighter pastel teal-ish */
-  font-style: italic;
-  font-family: 'Georgia', serif;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  text-shadow: 0 0 6px #56b4bf;
-}
-
-/* Subpage nav */
-body.subpage nav {
-  margin-top: 8px;
-}
-
-body.subpage nav a {
-  color: #b2d8d8;           /* pastel light text */
-  margin-right: 20px;
-  font-weight: 600;
-}
-
-body.subpage nav a:hover {
-  background-color: #305770; /* slightly lighter blue */
+  background: linear-gradient(to right, #0f1b2a, #1d4662);
   color: #e0f7f7;
-  transform: scale(1.05);
 }
 
-body.subpage nav a.active {
-  background-color: #56b4bf; /* pastel teal */
-  color: #fff;
-  font-weight: 700;
-  transform: scale(1.1);
-  cursor: default;
-  pointer-events: none;
-}
-
-/* Main content area for subpages */
 body.subpage main {
   max-width: 800px;
-  margin: 50px auto 70px;
+  margin: 50px auto;
   padding: 30px 40px;
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #e0f7f7;            /* pastel light text */
-  background: #243353;       /* a darker bluish shade similar to home hero */
+  background: #1b3b50;
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.8);
-  animation: fadeIn 1.2s ease forwards;
 }
 
-/* Subpage headings */
 body.subpage main h2 {
-  color: #56b4bf;            /* pastel teal */
-  margin-bottom: 20px;
-  text-shadow: 0 0 8px #56b4bf;
+  color: #82c9a6;
 }
 
-/* Subpage paragraphs and lists */
-body.subpage main p, 
-body.subpage main ul {
-  color: #d4f1f9;            /* light pastel text */
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #64748b;
-  padding: 20px 40px;
-  background: #1b1f3b;        /* same dark navy as body */
-  user-select: none;
-  border-top: 1px solid #305770;
-}
-
-/* Animations */
-/* Gradient text animation for header */
-
-body.subpage header h1,
-header h1 {
-  color: #56b4bf; /* pastel teal */
-  font-weight: 700;
-  /* No animation or glow */
-  text-shadow: 1px 1px 3px rgba(0, 120, 180, 0.4); /* subtle shadow for depth */
-}
-/*
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+/* ===== Smooth Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body.subpage header h1,
-header h1 {
-  background: linear-gradient(270deg, #56b4bf, #00c8ff, #56b4bf, #0077aa);
-  background-size: 600% 600%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 6s ease infinite;
-}*/
+.hero,
+body.subpage main {
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
