@@ -4,9 +4,31 @@
   <meta charset="UTF-8" />
   <title>Services - Striva</title>
   <style>
+    nav a {
+      color: #064547;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 0 5px;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+    nav a:hover {
+      background-color: #cce7f0;
+      color: #064547;
+      transform: scale(1.05);
+    }
+    nav a.active {
+      background-color: #b2d8d8;
+      color: #064547;
+      font-weight: 700;
+      transform: scale(1.1);
+      cursor: default;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       background: linear-gradient(to bottom right, #f8fbfc, #e6f7f7);
       color: #444;
       overflow-x: hidden;
@@ -26,85 +48,30 @@
       color: #064547;
       animation: glow 3s ease-in-out infinite alternate;
     }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #333;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      margin: 0 5px;
-      display: inline-block;
-      position: relative;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    nav a:hover {
-      background-color: #cce7f0;
-      transform: scale(1.05);
-    }
-    /* Active page link style */
-    nav a.active {
-      background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
-      background-size: 400% 400%;
-      background-repeat: no-repeat;
-      color: #064547 !important;
-      animation: gradientShift 12s ease infinite;
-      box-shadow: 0 0 10px #64bfbf, 0 0 20px #8acccc;
-      transform: scale(1.1);
-      font-weight: 700;
-      cursor: default;
-    }
-    nav a.active:hover {
-      transform: scale(1.1);
-      background: linear-gradient(270deg, #8acccc, #b2d8d8, #64bfbf, #a1d9d9);
+    header h2.tagline {
+      font-weight: 400;
+      color: #3a7ca5;
+      font-style: italic;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     main {
-      max-width: 800px;
-      margin: 30px auto;
+      max-width: 700px;
+      margin: 40px auto 60px;
+      line-height: 1.6;
+      font-size: 1.1em;
       color: #444;
       padding: 0 20px;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      padding: 20px;
+      background: #f0f7f7;
+      margin-top: 80px;
     }
-    ul li {
-      background-color: #f1f9f9;
-      margin-bottom: 12px;
-      padding: 12px;
-      border-left: 6px solid #8acccc;
-      border-radius: 4px;
-      font-size: 1.1em;
-    }
-    .mentor-card {
-      background-color: #fdfdfd;
-      border: 1px solid #ccc;
-      padding: 16px;
-      margin-top: 24px;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .mentor-card h4 {
-      margin-top: 0;
-    }
-    button {
-      background-color: #b2d8d8;
-      color: #064547;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #8acccc;
-    }
-
     @keyframes glow {
       0% {
         text-shadow: 0 0 5px #b2d8d8, 0 0 10px #8acccc;
@@ -113,69 +80,30 @@
         text-shadow: 0 0 15px #a1d9d9, 0 0 25px #064547;
       }
     }
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>Our Services</h1>
+    <h2 class="tagline">Empowering Your Career Journey</h2>
     <nav>
-      <a href="index.html" id="nav-home">Home</a>
-      <a href="about.html" id="nav-about">About</a>
-      <a href="services.html" id="nav-services">Services</a>
-      <a href="contact.html" id="nav-contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
   <main>
+    <p>At Striva, we offer a range of mentorship programs tailored to your career goals. Whether you’re looking to switch industries, level up your skills, or gain insights from experienced professionals, our mentors are here to guide you.</p>
     <ul>
-      <li>🔍 Discover mentors by career shift (e.g., Tech → Finance, Software → Semiconductors)</li>
-      <li>💬 One-on-one Q&A with professionals who've walked your path</li>
-      <li>📅 Book mentorship calls, resume reviews, and mock interviews</li>
-      <li>📚 Curated guides, transition blueprints, and industry-specific learning paths</li>
-      <li>🌐 Access to exclusive live sessions & career workshops</li>
-      <li>🤝 Peer circles & discussion forums for shared journeys</li>
-      <li>🎯 Tools to track your career pivot goals and mentor feedback</li>
+      <li>One-on-one mentoring sessions</li>
+      <li>Industry-specific career advice</li>
+      <li>Networking opportunities</li>
+      <li>Workshops and webinars</li>
     </ul>
-
-    <h3>Featured Mentor</h3>
-    <div class="mentor-card">
-      <h4>Priya Sharma</h4>
-      <p><strong>Career Path:</strong> Software Engineer → Semiconductor Engineer</p>
-      <p><strong>Expertise:</strong> DRAM/ASIC Verification, Synopsys Tools, Career Strategy</p>
-      <button onclick="alert('You will be connected with Priya via email!')">Ask a Question</button>
-    </div>
   </main>
   <footer>
     <p>&copy; 2025 Striva</p>
   </footer>
-
-  <script>
-    // Detect current page from URL path and highlight active nav link
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const navLinks = document.querySelectorAll("nav a");
-    let matched = false;
-    navLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-        matched = true;
-      } else {
-        link.classList.remove("active");
-      }
-    });
-    // If no link matches, highlight Home by default
-    if (!matched) {
-      document.getElementById("nav-home").classList.add("active");
-    }
-  </script>
 </body>
 </html>
