@@ -6,18 +6,38 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
-    /* Header Styling */
+    body.subpage {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #122642, #203e5a);
+      color: #E0F7F7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
     header {
-      background-color: #ffffff;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #82C9A6;
     }
 
     header h1 {
-      font-family: 'Times New Roman', Times, serif;
-      color: #82C9A6;
-      font-size: 2.5rem;
       margin: 0;
+      font-family: 'Times New Roman', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #82C9A6;
+    }
+
+    header h2.tagline {
+      margin: 5px 0 15px 0;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #d1d5db;
+      font-weight: 400;
+      font-size: 1.1rem;
     }
 
     nav {
@@ -25,85 +45,128 @@
     }
 
     nav a {
+      color: #d1d5db;
       text-decoration: none;
-      color: #333;
-      margin-right: 15px;
-      font-weight: 500;
-      transition: color 0.3s;
+      margin-right: 20px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    nav a:hover,
+    nav a:hover {
+      color: #8ecae6;
+      background-color: rgba(255,255,255,0.1);
+    }
+
     nav a.active {
-      color: #0052cc;
-      font-weight: bold;
-    }
-
-    /* Main Content Styling */
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #56B4BF;
+      color: #FFFFFF;
+      font-weight: 700;
+      pointer-events: none;
     }
 
     main {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px 40px;
+      background: #1B3B50;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+      flex-grow: 1;
     }
 
+    h2, h3 {
+      color: #A0E9E0;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    p, li {
+      line-height: 1.6;
+      color: #E6F4F1;
+    }
+
+    /* FAQ specific styles */
     .faq-item {
       margin-bottom: 1.5em;
       padding: 15px;
-      background: #fff;
+      background: #274b6d;
       border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      cursor: pointer;
+      user-select: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background: #3a6a9e;
     }
 
     .faq-question {
-      font-weight: 600;
-      cursor: pointer;
-      margin-bottom: 0.3em;
-      color: #003d99;
+      font-weight: 700;
+      color: #82C9A6;
+      margin-bottom: 0.5em;
     }
 
     .faq-answer {
       display: none;
       margin-left: 1em;
-      color: #333;
+      color: #cce7e7;
+      font-weight: 400;
+      line-height: 1.5;
     }
 
-    /* Footer Styling */
     footer {
-      background-color: #003366;
-      color: white;
+      background-color: #1b1f3b;
+      padding: 20px 40px;
       text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9em;
+      font-size: 0.9rem;
+      color: #d1d5db;
+      border-top: 1px solid #305770;
+      user-select: none;
+      margin-top: auto;
     }
 
     footer a {
-      color: #cce5ff;
+      color: #8ecae6;
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
     }
 
     footer a:hover {
-      text-decoration: underline;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        margin: 30px 20px;
+      }
+
+      nav a {
+        margin-right: 12px;
+      }
     }
   </style>
 </head>
 <body class="subpage">
   <header>
     <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="mentors.html">Mentors</a>
       <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
       <a href="faq.html" class="active">FAQ</a>
     </nav>
   </header>
@@ -140,9 +203,9 @@
   </main>
 
   <footer>
-    &copy; 2025 Wistriva. All rights reserved. | 
-    <a href="privacy.html">Privacy Policy</a> | 
-    <a href="terms.html">Terms & Conditions</a> | 
+    &copy; 2025 Wistriva. All rights reserved. |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
     <a href="faq.html">FAQ</a>
   </footer>
 
@@ -150,11 +213,15 @@
   <script>
     AOS.init({ duration: 1000, once: true });
 
-    // FAQ toggle logic
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('.faq-answer');
+        if (answer.style.display === 'block') {
+          answer.style.display = 'none';
+        } else {
+          answer.style.display = 'block';
+        }
       });
     });
   </script>
