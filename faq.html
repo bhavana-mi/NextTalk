@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Wistriva - FAQ</title>
+  <title>Wistriva - Contact</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
@@ -10,19 +10,33 @@
       color: #0052cc;
       font-weight: bold;
     }
-    .faq-item {
-      margin-bottom: 1.5em;
+    header h1 {
+      font-family: 'Times New Roman', Times, serif;
+      color: #82C9A6;
+      font-size: 2.5rem;
+      margin: 0;
     }
-    .faq-question {
-      font-weight: 600;
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #0052cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
-      margin-bottom: 0.3em;
-      color: #003d99;
     }
-    .faq-answer {
-      display: none;
-      margin-left: 1em;
-      color: #333;
+    form button:hover {
+      background-color: #003d99;
     }
   </style>
 </head>
@@ -34,41 +48,18 @@
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="mentors.html">Mentors</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
-      <a href="faq.html" class="active">FAQ</a>
+      <a href="faq.html">FAQ</a>
     </nav>
   </header>
 
   <main>
     <section data-aos="fade-up">
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <div class="faq-question">What is Wistriva?</div>
-        <div class="faq-answer">Wistriva is a mentorship platform connecting professionals across industries to share knowledge, support career transitions, and build networks.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">How do I find a mentor?</div>
-        <div class="faq-answer">You can browse mentors on the Mentors page and connect directly for personalized guidance based on your goals and career path.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Is there a fee to use Wistriva?</div>
-        <div class="faq-answer">Basic networking and community features are free. Advanced 1:1 mentorship sessions may require a nominal fee depending on the mentor's terms.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">How do I become a mentor?</div>
-        <div class="faq-answer">Visit the Mentors page and apply to join our mentor community. We review all applications to ensure quality guidance.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">How is my privacy protected?</div>
-        <div class="faq-answer">We take privacy seriously. Please review our Privacy Policy for details on data protection and your rights.</div>
-      </div>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd5uGHgD7iEPUR53ThRLPcTYj6XlzUUTYJu4VZylGXLkWKH3Q/viewform?embedded=true"
+        width="100%" height="850" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </section>
   </main>
 
@@ -79,18 +70,6 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
-
-    // FAQ toggle logic
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        if (answer.style.display === 'block') {
-          answer.style.display = 'none';
-        } else {
-          answer.style.display = 'block';
-        }
-      });
-    });
   </script>
 </body>
 </html>
