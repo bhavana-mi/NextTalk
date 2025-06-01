@@ -1,12 +1,35 @@
+/* ===== Root Variables ===== */
+:root {
+  --navy: #0f1b2a;
+  --navy-dark: #1b3b50;
+  --navy-gradient-end: #16364e;
+  --navy-highlight: #144566;
+  --section-bg: #1b2d45;
+
+  --teal: #82C9A6;
+  --teal-muted: #56B4BF;
+  --light-blue: #8ECAE6;
+  --pastel: #E0F7F7;
+  --muted-text: #B2D8D8;
+
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-serif: Georgia, serif;
+}
+
 /* ===== Reset & Base ===== */
 * {
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0f1b2a;  /* deep navy */
-  color: #e0f7f7;       /* pastel text */
+  font-family: var(--font-sans);
+  background: var(--navy);
+  color: var(--pastel);
   overflow-x: hidden;
   line-height: 1.6;
 }
@@ -17,16 +40,16 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #0f1b2a; /* deep navy */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-  color: #82C9A6; /* palette green */
+  background-color: var(--navy);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  color: var(--teal);
 }
 
 header h1 {
   margin: 0;
   font-size: 2em;
   font-weight: 700;
-  color: #82C9A6; /* palette green */
+  color: var(--teal);
 }
 
 nav {
@@ -34,7 +57,7 @@ nav {
 }
 
 nav a {
-  color: #B2D8D8;           /* muted pastel text */
+  color: var(--muted-text);
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 6px;
@@ -46,46 +69,45 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #1B3B50; /* darker navy-blue on hover */
-  color: #E0F7F7;            /* pastel text */
+  background-color: var(--navy-dark);
+  color: var(--pastel);
   transform: scale(1.05);
 }
 
-/* ===== Active Link Highlight =====
-   Applies the same pastel-teal “button” style to whichever link is .active */
 nav a.active {
-  background-color: #82C9A6; /* pastel-teal */
-  color: #FFFFFF;            /* white text on active link */
+  background-color: var(--teal);
+  color: #ffffff;
   font-weight: 700;
   transform: scale(1.1);
-  pointer-events: none;      /* disable clicking when already active */
+  pointer-events: none;
 }
 
 /* ===== Home Page Styling ===== */
 body.home {
-  background: linear-gradient(to right, #0f1b2a, #16364e);
-  color: #E0F7F7;
+  background: linear-gradient(to right, var(--navy), var(--navy-gradient-end));
+  color: var(--pastel);
 }
 
 .hero {
-  background: linear-gradient(to right, #1B3B50, #144566);
-  padding: 60px 30px;
+  background: linear-gradient(to right, var(--navy-dark), var(--navy-highlight));
+  padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   text-align: center;
   max-width: 900px;
   margin: 40px auto;
+  animation: fadeIn 1.2s ease-in-out forwards;
 }
 
 .hero h2 {
   font-size: 2.5em;
   margin-bottom: 12px;
-  color: #82C9A6; /* pastel-teal heading */
+  color: var(--teal);
 }
 
 .hero button {
-  background-color: #82C9A6;
-  color: #0f1b2a;
+  background-color: var(--teal);
+  color: var(--navy);
   border: none;
   padding: 14px 28px;
   font-size: 1.1em;
@@ -103,32 +125,28 @@ body.home {
 
 /* ===== Subpage Styling ===== */
 body.subpage {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f1b2a; /* same dark navy background as homepage */
-  color: #e0f7f7;
+  background-color: var(--navy);
+  color: var(--pastel);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Main content area styled like homepage cards/sections */
 body.subpage main {
   max-width: 1000px;
   margin: 60px auto;
   padding: 30px;
+  animation: fadeIn 1.2s ease-in-out forwards;
 }
 
-/* Section titles match home page styling */
 body.subpage main h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 1.8rem;
-  color: #56B4BF; /* pastel teal */
+  color: var(--teal);
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* General paragraph/text styling inside main */
 body.subpage main p,
 body.subpage main ul {
   font-size: 1.05rem;
@@ -137,15 +155,13 @@ body.subpage main ul {
   font-family: Verdana, sans-serif;
 }
 
-/* Optional: mimic section boxes on home page */
 body.subpage section {
-  background-color: #1b2d45;
+  background-color: var(--section-bg);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  padding: 30px;
   margin-bottom: 40px;
 }
-
 
 /* ===== Smooth Animations ===== */
 @keyframes fadeIn {
@@ -159,31 +175,26 @@ body.subpage section {
   }
 }
 
-.hero,
-body.subpage main {
-  animation: fadeIn 1.2s ease-in-out forwards;
-}
-
 /* ===== Footer ===== */
 footer {
-  background-color: #0f1b2a; /* navy footer */
+  background-color: var(--navy);
   padding: 20px 40px;
   text-align: center;
   font-size: 0.9rem;
-  color: #B2D8D8;            /* muted pastel text */
-  border-top: 1px solid #305770; /* subtle teal border */
+  color: var(--muted-text);
+  border-top: 1px solid #305770;
   user-select: none;
 }
 
 footer a {
-  color: #8ECAE6;            /* light blue link */
+  color: var(--light-blue);
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* ===== Responsive ===== */
@@ -197,6 +208,6 @@ footer a:hover {
   }
   .hero {
     margin: 30px auto;
-    padding: 40px 20px;
+    padding: 30px 20px;
   }
 }
