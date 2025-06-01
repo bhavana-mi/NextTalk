@@ -80,23 +80,28 @@
       box-shadow: 0 8px 15px rgba(0,0,0,0.8);
       display: flex;
       flex-direction: column;
-      align-items: center;
+      min-height: 600px;
     }
 
-    /* Hide the old form */
-    form#contactForm {
-      display: none;
-    }
-
-    /* Style for Google Form iframe container */
-    .google-form-container {
+    /* Responsive iframe container */
+    .iframe-container {
+      position: relative;
       width: 100%;
-      max-width: 700px;
-      height: 700px; /* adjust height to your Google Form length */
-      border: none;
+      padding-bottom: 120%; /* Aspect ratio to fit Google Form */
+      height: 0;
+      overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 8px 15px rgba(0,0,0,0.8);
-      overflow: hidden;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
     }
 
     footer {
@@ -129,8 +134,8 @@
       nav a {
         margin-right: 12px;
       }
-      .google-form-container {
-        height: 900px;
+      .iframe-container {
+        padding-bottom: 160%; /* Adjust height for smaller screens */
       }
     }
   </style>
@@ -152,31 +157,9 @@
   </header>
 
   <main>
-    <!-- Original form hidden -->
-    <form id="contactForm" data-aos="fade-up">
-      <label for="name">Name:
-        <input type="text" id="name" name="name" required />
-      </label>
-      <label for="email">Email:
-        <input type="email" id="email" name="email" required />
-      </label>
-      <label for="message">Message:
-        <textarea id="message" name="message" required></textarea>
-      </label>
-      <button type="submit">Send</button>
-    </form>
-
-    <!-- Google Form embed -->
-    <iframe 
-      class="google-form-container"
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdYourFormIDHere/viewform?embedded=true" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0"
-      title="Contact Form"
-    >
-      Loading…
-    </iframe>
+    <div class="iframe-container" data-aos="fade-up">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTj2yvd5Spq0l6j3mqakPjZ-pNGTUzSqZpjxqA_0UBc5jCxlg/viewform?embedded=true" allowfullscreen></iframe>
+    </div>
   </main>
 
   <footer>
