@@ -31,14 +31,14 @@
       font-family: Georgia, serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #82C9A6; /* same greenish color as homepage */
+      color: #82C9A6;
     }
 
     header h2.tagline {
       margin: 5px 0 15px 0;
       font-family: Georgia, serif;
       font-style: italic;
-      color: #d1d5db; /* light gray */
+      color: #d1d5db;
       font-weight: 400;
       font-size: 1.1rem;
     }
@@ -78,51 +78,25 @@
       background: #1B3B50;
       border-radius: 12px;
       box-shadow: 0 8px 15px rgba(0,0,0,0.8);
-    }
-
-    form {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      align-items: center;
     }
 
-    form label {
-      font-size: 1.1rem;
-      color: #d1d5db;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    /* Hide the old form */
+    form#contactForm {
+      display: none;
     }
 
-    form input, form textarea {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #305770;
-      background-color: #223c50;
-      color: #E0F7F7;
-      font-size: 1rem;
-      resize: vertical;
-      min-height: 40px;
-    }
-
-    form textarea {
-      min-height: 100px;
-    }
-
-    form button {
-      padding: 12px 20px;
-      background-color: #56B4BF;
-      color: #fff;
+    /* Style for Google Form iframe container */
+    .google-form-container {
+      width: 100%;
+      max-width: 700px;
+      height: 700px; /* adjust height to your Google Form length */
       border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      align-self: flex-start;
-    }
-
-    form button:hover {
-      background-color: #4a9da7;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+      overflow: hidden;
     }
 
     footer {
@@ -155,9 +129,8 @@
       nav a {
         margin-right: 12px;
       }
-      form button {
-        width: 100%;
-        align-self: stretch;
+      .google-form-container {
+        height: 900px;
       }
     }
   </style>
@@ -179,6 +152,7 @@
   </header>
 
   <main>
+    <!-- Original form hidden -->
     <form id="contactForm" data-aos="fade-up">
       <label for="name">Name:
         <input type="text" id="name" name="name" required />
@@ -191,6 +165,18 @@
       </label>
       <button type="submit">Send</button>
     </form>
+
+    <!-- Google Form embed -->
+    <iframe 
+      class="google-form-container"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdYourFormIDHere/viewform?embedded=true" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0"
+      title="Contact Form"
+    >
+      Loading…
+    </iframe>
   </main>
 
   <footer>
