@@ -31,14 +31,14 @@
       font-family: Georgia, serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: #82C9A6;
+      color: #82C9A6; /* same greenish color as homepage */
     }
 
     header h2.tagline {
       margin: 5px 0 15px 0;
       font-family: Georgia, serif;
       font-style: italic;
-      color: #d1d5db;
+      color: #d1d5db; /* light gray */
       font-weight: 400;
       font-size: 1.1rem;
     }
@@ -78,30 +78,51 @@
       background: #1B3B50;
       border-radius: 12px;
       box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+    }
+
+    form {
       display: flex;
       flex-direction: column;
-      min-height: 600px;
+      gap: 15px;
     }
 
-    /* Responsive iframe container */
-    .iframe-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 120%; /* Aspect ratio to fit Google Form */
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+    form label {
+      font-size: 1.1rem;
+      color: #d1d5db;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .iframe-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #305770;
+      background-color: #223c50;
+      color: #E0F7F7;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 40px;
+    }
+
+    form textarea {
+      min-height: 100px;
+    }
+
+    form button {
+      padding: 12px 20px;
+      background-color: #56B4BF;
+      color: #fff;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      align-self: flex-start;
+    }
+
+    form button:hover {
+      background-color: #4a9da7;
     }
 
     footer {
@@ -134,8 +155,9 @@
       nav a {
         margin-right: 12px;
       }
-      .iframe-container {
-        padding-bottom: 160%; /* Adjust height for smaller screens */
+      form button {
+        width: 100%;
+        align-self: stretch;
       }
     }
   </style>
@@ -157,9 +179,18 @@
   </header>
 
   <main>
-    <div class="iframe-container" data-aos="fade-up">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTj2yvd5Spq0l6j3mqakPjZ-pNGTUzSqZpjxqA_0UBc5jCxlg/viewform?embedded=true" allowfullscreen></iframe>
-    </div>
+    <form id="contactForm" data-aos="fade-up">
+      <label for="name">Name:
+        <input type="text" id="name" name="name" required />
+      </label>
+      <label for="email">Email:
+        <input type="email" id="email" name="email" required />
+      </label>
+      <label for="message">Message:
+        <textarea id="message" name="message" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
   </main>
 
   <footer>
