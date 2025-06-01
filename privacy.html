@@ -6,15 +6,129 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
-    body.subpage header nav a.active {
-      color: #0052cc;
-      font-weight: bold;
+    body.subpage {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #122642, #203e5a);
+      color: #E0F7F7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #82C9A6;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #82C9A6;
+    }
+
+    header h2.tagline {
+      margin: 5px 0 15px 0;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #d1d5db;
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8ecae6;
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    nav a.active {
+      background-color: #56B4BF;
+      color: #FFFFFF;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px 40px;
+      background: #1B3B50;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+      flex-grow: 1;
+    }
+
+    h2, h3 {
+      color: #A0E9E0;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    p, li {
+      line-height: 1.6;
+      color: #E6F4F1;
+    }
+
+    footer {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #d1d5db;
+      border-top: 1px solid #305770;
+      user-select: none;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #8ecae6;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        margin: 30px 20px;
+      }
+
+      nav a {
+        margin-right: 12px;
+      }
     }
   </style>
 </head>
 <body class="subpage">
   <header>
     <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -50,7 +164,7 @@
       <p>We implement industry-standard security measures to protect your data from unauthorized access, alteration, or destruction.</p>
 
       <h3>Your Rights</h3>
-      <p>You have the right to access, update, or delete your personal information. Contact us anytime at <a href="contact.html">Contact</a>.</p>
+      <p>You have the right to access, update, or delete your personal information. Contact us anytime via our <a href="contact.html">Contact</a> page.</p>
 
       <h3>Cookies</h3>
       <p>Our site uses cookies to personalize content and analyze traffic. You can disable cookies via your browser settings, but some features may be limited.</p>
@@ -61,7 +175,10 @@
   </main>
 
   <footer>
-    &copy; 2025 Wistriva. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a> | <a href="faq.html">FAQ</a>
+    &copy; 2025 Wistriva. All rights reserved. |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="faq.html">FAQ</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
