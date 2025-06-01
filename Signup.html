@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wistriva - Sign Up</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+    body.subpage {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #122642, #203e5a);
+      color: #E0F7F7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #82C9A6;
+    }
+    header h1 {
+      margin: 0;
+      font-family: Times New Roman, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #82C9A6;
+    }
+    header h2.tagline {
+      margin: 5px 0 15px 0;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #d1d5db;
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+    main {
+      max-width: 450px;
+      margin: 60px auto;
+      padding: 30px 40px;
+      background: #1B3B50;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+      flex-grow: 1;
+      color: #E6F4F1;
+    }
+    h2 {
+      text-align: center;
+      color: #A0E9E0;
+      margin-bottom: 20px;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #56B4BF;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body class="subpage">
+  <header>
+    <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
+  </header>
+
+  <main data-aos="fade-up">
+    <h2>Create Your Account</h2>
+    <form id="signupForm" action="your-server-endpoint" method="POST">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>.
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        event.preventDefault();
+      }
+    });
+
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
