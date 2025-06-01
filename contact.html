@@ -2,19 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Striva - Contact</title>
+  <title>Wistriva - Contact</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    body.subpage {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #122642, #203e5a);
+      color: #E0F7F7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: #82C9A6;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #82C9A6; /* same greenish color as homepage */
+    }
+
+    header h2.tagline {
+      margin: 5px 0 15px 0;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #d1d5db; /* light gray */
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #8ecae6;
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    nav a.active {
+      background-color: #56B4BF;
+      color: #FFFFFF;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px 40px;
+      background: #1B3B50;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.8);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form label {
+      font-size: 1.1rem;
+      color: #d1d5db;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #305770;
+      background-color: #223c50;
+      color: #E0F7F7;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 40px;
+    }
+
+    form textarea {
+      min-height: 100px;
+    }
+
+    form button {
+      padding: 12px 20px;
+      background-color: #56B4BF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      align-self: flex-start;
+    }
+
+    form button:hover {
+      background-color: #4a9da7;
+    }
+
+    footer {
+      background-color: #1b1f3b;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #d1d5db;
+      border-top: 1px solid #305770;
+      user-select: none;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #8ecae6;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        margin: 30px 20px;
+      }
+      nav a {
+        margin-right: 12px;
+      }
+      form button {
+        width: 100%;
+        align-self: stretch;
+      }
+    }
+  </style>
 </head>
 <body class="subpage">
   <header>
-    <h1>Contact Us</h1>
+    <h1>Wistriva</h1>
+    <h2 class="tagline">Strive Boldly. Connect Deeply. Grow Limitlessly.</h2>
     <nav>
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="mentors.html">Mentors</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms & Conditions</a>
       <a href="faq.html">FAQ</a>
@@ -37,7 +194,10 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Striva. All rights reserved.</p>
+    &copy; 2025 Wistriva. All rights reserved. |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms & Conditions</a> |
+    <a href="faq.html">FAQ</a>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
